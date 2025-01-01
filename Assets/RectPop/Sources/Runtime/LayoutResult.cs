@@ -4,16 +4,16 @@ namespace RectPop
 {
     public readonly struct LayoutResult
     {
-        /// <summary> pivot point of the layout. </summary>
-        public readonly Vector2 Pivot;
+        /// <summary> pivot of the layout. </summary>
+        public readonly Position Pivot;
 
-        /// <summary> screen position of the layout. </summary>
-        public readonly Vector2 ScreenPosition;
+        /// <summary> screen point of the layout. </summary>
+        public readonly Vector2 ScreenPoint;
 
-        public LayoutResult(Vector2 pivot, Vector2 screenPosition)
+        public LayoutResult(Position pivot, Vector2 screenPoint)
         {
             Pivot = pivot;
-            ScreenPosition = screenPosition;
+            ScreenPoint = screenPoint;
         }
     }
 }

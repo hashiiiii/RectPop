@@ -5,7 +5,10 @@ namespace RectPop
     public readonly struct LayoutRequest
     {
         /// <summary> "RectTransform" that defines the target area. </summary>
-        public readonly RectTransform TargetRectTransform;
+        public readonly RectTransform LayoutRectTransform;
+
+        /// <summary> type of layout to apply. </summary>
+        public readonly LayoutType LayoutType;
 
         /// <summary> offset for positioning the layout. </summary>
         /// <remarks> x -> horizontal offset, y -> vertical offset </remarks>
@@ -15,24 +18,21 @@ namespace RectPop
         public readonly float CenterThreshold;
 
         /// <summary> "Camera" used to render the target "RectTransform". </summary>
-        public readonly Camera TargetCamera;
-
-        /// <summary> type of layout to apply. </summary>
-        public readonly LayoutType LayoutType;
+        public readonly Camera LayoutCamera;
 
         public LayoutRequest(
-            RectTransform targetRectTransform,
-            Vector2 offset,
+            RectTransform layoutRectTransform,
             LayoutType layoutType,
-            float centerThreshold = 50f,
-            Camera targetCamera = null
+            Vector2 offset = default,
+            float centerThreshold = 0f,
+            Camera layoutCamera = null
         )
         {
-            TargetRectTransform = targetRectTransform;
-            Offset = offset;
+            LayoutRectTransform = layoutRectTransform;
             LayoutType = layoutType;
+            Offset = offset;
             CenterThreshold = centerThreshold;
-            TargetCamera = targetCamera;
+            LayoutCamera = layoutCamera;
         }
     }
 }
