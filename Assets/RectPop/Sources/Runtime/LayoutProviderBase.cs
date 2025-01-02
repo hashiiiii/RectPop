@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace RectPop
 {
-    public class LayoutProvider
+    public abstract class LayoutProviderBase : ILayoutProvider
     {
         private readonly Vector3[] _corners = new Vector3[4];
         private Vector3 _boundingBoxCenter;
@@ -10,9 +10,9 @@ namespace RectPop
 
         public virtual LayoutResult Provide(LayoutRequest request)
         {
-            if (request.LayoutRectTransform is null)
+            if (request.BaseRectTransform is null)
             {
-                Debug.LogError($"{nameof(request.LayoutRectTransform)} is null.");
+                Debug.LogError($"{nameof(request.BaseRectTransform)} is null.");
                 return new LayoutResult(pivot: default, screenPoint: default);
             }
 
@@ -20,39 +20,44 @@ namespace RectPop
             // ---------------------------------------------
             // corners[0] = bottom left, corners[1] = top left,
             // corners[2] = top right, corners[3] = bottom right
-            request.LayoutRectTransform.GetWorldCorners(_corners);
+            request.BaseRectTransform.GetWorldCorners(_corners);
             _isBoundingBoxCenterDirty = true;
 
             // 2. get the center of the bounding box (world coordinates)
             var boundingBoxCenter = (_corners[0] + _corners[1] + _corners[2] + _corners[3]) * 0.25f;
 
-            // 3. convert to screen coordinates
-            var boundingBoxCenterScreenPoint = RectTransformUtility.WorldToScreenPoint(request.LayoutCamera, boundingBoxCenter);
+            // 3. determine the camera
+            var camera = request.BaseCanvas.renderMode == RenderMode.ScreenSpaceOverlay
+                ? null
+                : request.BaseCanvas.worldCamera;
 
-            // 4. determine the screen center point
+            // 4. convert to screen coordinates
+            var boundingBoxCenterScreenPoint = RectTransformUtility.WorldToScreenPoint(camera, boundingBoxCenter);
+
+            // 5. determine the screen center point
             var screenCenterPoint = new Vector2(Screen.width * 0.5f, Screen.height * 0.5f);
 
-            // 5. determine the Position based on boundingBoxCenterScreenPoint and screenCenterPoint
+            // 6. determine the Position based on boundingBoxCenterScreenPoint and screenCenterPoint
             var position = GetBoundingBoxPosition(
                 boundingBoxCenterScreenPoint: boundingBoxCenterScreenPoint,
                 screenCenter: screenCenterPoint,
                 threshold: request.CenterThreshold
             );
 
-            // 6. determine the layout anchor position based on the Position and LayoutType
+            // 7. determine the layout anchor position based on the Position and LayoutType
             var layoutAnchorWorldPoint = GetLayoutAnchorWorldPoint(position, request.LayoutType, _corners);
 
-            // 7. convert the layout anchor point to screen point
-            var layoutAnchorScreenPoint = RectTransformUtility.WorldToScreenPoint(request.LayoutCamera, layoutAnchorWorldPoint);
+            // 8. convert the layout anchor point to screen point
+            var layoutAnchorScreenPoint = RectTransformUtility.WorldToScreenPoint(camera, layoutAnchorWorldPoint);
 
-            // 8. apply offset
+            // 9. apply offset
             ApplyOffset(
                 layoutAnchorScreenPoint: ref layoutAnchorScreenPoint,
                 position: position,
                 offset: request.Offset
             );
 
-            // 9. return the result
+            // 10. return the result
             return new LayoutResult(pivot: position, screenPoint: layoutAnchorScreenPoint);
         }
 
@@ -114,18 +119,7 @@ namespace RectPop
             };
         }
 
-        private Vector3 GetBoundingBoxCenter(Vector3[] corners)
-        {
-            if (_isBoundingBoxCenterDirty)
-            {
-                _boundingBoxCenter = (corners[0] + corners[1] + corners[2] + corners[3]) * 0.25f;
-                _isBoundingBoxCenterDirty = false;
-            }
-
-            return _boundingBoxCenter;
-        }
-
-        private void ApplyOffset(ref Vector2 layoutAnchorScreenPoint, Position position, Vector2 offset)
+        protected virtual void ApplyOffset(ref Vector2 layoutAnchorScreenPoint, Position position, Vector2 offset)
         {
             // apply vertical offset
             switch (position)
@@ -156,6 +150,17 @@ namespace RectPop
                     layoutAnchorScreenPoint.x -= offset.x;
                     break;
             }
+        }
+
+        private Vector3 GetBoundingBoxCenter(Vector3[] corners)
+        {
+            if (_isBoundingBoxCenterDirty)
+            {
+                _boundingBoxCenter = (corners[0] + corners[1] + corners[2] + corners[3]) * 0.25f;
+                _isBoundingBoxCenterDirty = false;
+            }
+
+            return _boundingBoxCenter;
         }
 
         // ReSharper disable ConditionIsAlwaysTrueOrFalse

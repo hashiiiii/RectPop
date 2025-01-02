@@ -393,8 +393,8 @@ MonoBehaviour:
   _offset: {x: 0, y: 0}
   _layoutType: 0
   _centerThreshold: 0
-  _camera: {fileID: 519420031}
-  _buttons:
+  _baseCanvas: {fileID: 913039543}
+  _baseButtons:
   - {fileID: 165963644}
   - {fileID: 1054270530}
   - {fileID: 1896477420}
