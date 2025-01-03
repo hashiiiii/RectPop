@@ -90,4 +90,13 @@ TBD
 
 ## ライセンス
 
-本ソフトウェアはMITライセンスで公開しています。ライセンスの範囲内で自由に使っていただけますが、著作権表示とライセンス表示が必須となります。詳細は [LICENSE](LICENSE.md) ファイルをご覧ください。
+本ソフトウェアはMITライセンスで公開しています。  
+ライセンスの範囲内で自由に使っていただけますが、使用の際は以下の著作権表示とライセンス表示が必須となります。
+
+* [LICENSE.md](LICENSE.md)
+
+また、本ドキュメントの目次は以下のソフトウェアを使用して作成されています。
+
+* [toc-generator](https://github.com/technote-space/toc-generator)
+
+toc-generatorのライセンスの詳細は [Third Party Notices.md](Thirs%20Party%20Notices.md) を参照してください。
