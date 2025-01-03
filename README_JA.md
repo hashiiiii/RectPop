@@ -5,7 +5,7 @@
 # RectPop
 
 [![license](https://img.shields.io/badge/LICENSE-MIT-green.svg)](LICENSE.md)
-[![unity](https://img.shields.io/badge/Unity-2019.3+-black.svg)](###要件)
+[![unity](https://img.shields.io/badge/Unity-2019.3+-black.svg)](#要件)
 
 **ドキュメント ([English](README.md), [日本語](README_JA.md))**
 
@@ -18,8 +18,9 @@
 ## 目次
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
+<!-- param::title::詳細:: -->
 <details>
-<summary>Details</summary>
+<summary>詳細</summary>
 
 - [概要](#%E6%A6%82%E8%A6%81)
 - [特徴](#%E7%89%B9%E5%BE%B4)
