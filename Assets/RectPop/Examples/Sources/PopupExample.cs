@@ -8,7 +8,7 @@ namespace RectPop.Examples.Sources
     {
         [Header("Settings")]
         [SerializeField] Vector2 _offset;
-        [SerializeField] LayoutType _layoutType;
+        [SerializeField] PopType popType;
         [SerializeField] float _centerThreshold;
 
         [Header("References")]
@@ -35,10 +35,10 @@ namespace RectPop.Examples.Sources
                 {
                     var baseRectTransform = button.GetComponent<RectTransform>();
 
-                    var request = new LayoutRequest(
+                    var request = new PopRequest(
                         baseRectTransform: baseRectTransform,
                         baseCanvas: _baseCanvas,
-                        layoutType: _layoutType,
+                        popType: popType,
                         offset: _offset,
                         centerThreshold: _centerThreshold
                     );

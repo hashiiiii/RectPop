@@ -5,49 +5,49 @@ namespace RectPop
     public class RectPopController
     {
         // constant
-        private static readonly ILayoutProvider Default = new DefaultLayoutProvider();
+        private static readonly IPopProvider Default = new DefaultPopProvider();
 
         // dependency
-        private readonly ILayoutProvider _layoutProvider;
+        private readonly IPopProvider _popProvider;
 
         // constructor
-        public RectPopController(ILayoutProvider layoutProvider)
+        public RectPopController(IPopProvider popProvider)
         {
-            _layoutProvider = layoutProvider;
+            _popProvider = popProvider;
         }
 
         public RectPopController() : this(Default)
         {
         }
 
-        public LayoutResult Provide(LayoutRequest request)
+        public PopResult Provide(PopRequest request)
         {
-            return _layoutProvider.Provide(request);
+            return _popProvider.Provide(request);
         }
 
-        public void Apply(LayoutResult result, RectTransform layoutRect, Canvas layoutCanvas)
+        public void Apply(PopResult result, RectTransform baseRectTransform, Canvas baseCanvas)
         {
-            if (layoutRect is null || layoutCanvas is null)
+            if (baseRectTransform is null || baseCanvas is null)
             {
-                Debug.LogError($"{nameof(layoutRect)} or {nameof(layoutCanvas)} is null.");
+                Debug.LogError($"{nameof(baseRectTransform)} or {nameof(baseCanvas)} is null.");
                 return;
             }
 
-            if (layoutRect.parent is not RectTransform layoutParentRect)
+            if (baseRectTransform.parent is not RectTransform baseParentRect)
             {
-                Debug.LogError($"{nameof(layoutRect)} does not have a parent RectTransform.");
+                Debug.LogError($"{nameof(baseRectTransform)} does not have a parent RectTransform.");
                 return;
             }
 
-            layoutRect.pivot = PositionUtility.GetPivot(result.Pivot);
-            layoutRect.anchorMin = layoutRect.anchorMax = layoutParentRect.pivot = PositionUtility.GetPivot(Position.MiddleCenter);
+            baseRectTransform.pivot = PositionUtility.GetPivot(result.Pivot);
+            baseRectTransform.anchorMin = baseRectTransform.anchorMax = baseParentRect.pivot = PositionUtility.GetPivot(Position.MiddleCenter);
 
-            var camera = layoutCanvas.renderMode == RenderMode.ScreenSpaceOverlay
+            var camera = baseCanvas.renderMode == RenderMode.ScreenSpaceOverlay
                 ? null
-                : layoutCanvas.worldCamera;
+                : baseCanvas.worldCamera;
             
             var isConverted = RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                layoutParentRect,
+                baseParentRect,
                 result.ScreenPoint,
                 camera,
                 out var localPoint
@@ -55,7 +55,7 @@ namespace RectPop
 
             if (isConverted)
             {
-                layoutRect.anchoredPosition = localPoint;
+                baseRectTransform.anchoredPosition = localPoint;
             }
             else
             {
@@ -63,13 +63,20 @@ namespace RectPop
             }
         }
 
-        public void ProvideAndApply(LayoutRequest request, RectTransform layoutRect, Canvas layoutCanvas)
+        public void ProvideAndApply(PopRequest request, RectTransform popRectTransform, Canvas popCanvas)
         {
-            Apply(result: Provide(request), layoutRect, layoutCanvas);
+            var result = Provide(request);
+            if (result.Pivot is Position.None)
+            {
+                Debug.LogError($"Failed to get {nameof(PopResult)}");
+                return;
+            }
+
+            Apply(result, popRectTransform, popCanvas);
         }
 
         // default
-        private class DefaultLayoutProvider : LayoutProviderBase
+        private class DefaultPopProvider : PopProviderBase
         {
         }
     }
