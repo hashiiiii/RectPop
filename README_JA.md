@@ -83,7 +83,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
 3. 以下の URL を入力します。：`https://github.com/hashiiiii/RectPop.git?path=/Assets/RectPop/Sources`
 4. `追加` をクリックしてパッケージをインストールします。
 
-詳細については、[Unity マニュアルの Git URL からのインストール](https://docs.unity3d.com/ja/2019.4/Manual/upm-ui-giturl.html)を参照してください。
+詳細については、Unity マニュアルの [Git URL からのインストール](https://docs.unity3d.com/ja/2019.4/Manual/upm-ui-giturl.html) を参照してください。
 
 ## 基本的な使い方
 TBD
