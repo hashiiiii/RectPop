@@ -1,0 +1,19 @@
+﻿{
+  "name": "jp.hashiiiii.rectpop",
+  "displayName": "RectPop",
+  "version": "1.0.0",
+  "unity": "2019.4",
+  "description": "A Unity plugin for positioning layouts around a RectTransform using anchors and pivots.",
+  "keywords": [
+    "Unity",
+    "UI",
+    "RectTransform",
+    "Tooltip",
+    "Popover",
+    "Popup"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hashiiiii/RectPop.git"
+  }
+}
