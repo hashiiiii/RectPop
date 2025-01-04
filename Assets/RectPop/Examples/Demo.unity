@@ -391,10 +391,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _offset: {x: 0, y: 0}
-  _layoutType: 0
+  _popType: 0
   _centerThreshold: 0
   _baseCanvas: {fileID: 913039543}
-  _baseButtons:
+  _buttons:
   - {fileID: 165963644}
   - {fileID: 1054270530}
   - {fileID: 1896477420}

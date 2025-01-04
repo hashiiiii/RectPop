@@ -2,18 +2,18 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace RectPop.Examples.Sources
+namespace RectPop
 {
-    public class PopupExample : MonoBehaviour
+    public class Demo : MonoBehaviour
     {
         [Header("Settings")]
         [SerializeField] Vector2 _offset;
-        [SerializeField] PopType popType;
+        [SerializeField] PopType _popType;
         [SerializeField] float _centerThreshold;
 
         [Header("References")]
         [SerializeField] private Canvas _baseCanvas;
-        [SerializeField] private List<Button> _baseButtons;
+        [SerializeField] private List<Button> _buttons;
         [SerializeField] private RectTransform _popupRect;
         [SerializeField] private Canvas _popupCanvas;
         [SerializeField] private Button _transparentButton;
@@ -29,7 +29,7 @@ namespace RectPop.Examples.Sources
                 SetActive(false);
             });
 
-            foreach (var button in _baseButtons)
+            foreach (var button in _buttons)
             {
                 button.onClick.AddListener(() =>
                 {
@@ -38,7 +38,7 @@ namespace RectPop.Examples.Sources
                     var request = new PopRequest(
                         baseRectTransform: baseRectTransform,
                         baseCanvas: _baseCanvas,
-                        popType: popType,
+                        popType: _popType,
                         offset: _offset,
                         centerThreshold: _centerThreshold
                     );
