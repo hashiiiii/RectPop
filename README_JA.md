@@ -196,10 +196,10 @@ public class Example02Request : MonoBehaviour
 
     private void Awake()
     {
-        button.onClick.AddListener(() =>
+        _button.onClick.AddListener(() =>
         {
             // get base rect transform
-            var baseRectTransform = button.GetComponent<RectTransform>();
+            var baseRectTransform = _button.GetComponent<RectTransform>();
 
             // create request
             var request = new PopRequest(baseRectTransform, _baseCanvas);
