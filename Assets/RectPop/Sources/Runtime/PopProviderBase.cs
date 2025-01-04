@@ -9,16 +9,22 @@ namespace RectPop
         /// <returns> pop result with the calculated pivot and screen point </returns>
         public virtual PopResult Provide(PopRequest request)
         {
+            if (request is null)
+            {
+                Debug.LogError($"{nameof(request)} is null.");
+                return null;
+            }
+
             if (request.BaseRectTransform is null)
             {
                 Debug.LogError($"{nameof(request.BaseRectTransform)} is null.");
-                return new PopResult(pivot: default, screenPoint: default);
+                return null;
             }
 
             if (request.BaseCanvas is null)
             {
                 Debug.LogError($"{nameof(request.BaseCanvas)} is null.");
-                return new PopResult(pivot: default, screenPoint: default);
+                return null;
             }
 
             // 1. get the four corners of the bounding box

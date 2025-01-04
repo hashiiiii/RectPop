@@ -2,7 +2,7 @@
 
 namespace RectPop
 {
-    public readonly struct PopRequest
+    public class PopRequest
     {
         /// <summary> the base UI RectTransform </summary>
         /// <remarks>

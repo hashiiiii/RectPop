@@ -2,7 +2,7 @@
 
 namespace RectPop
 {
-    public readonly struct PopResult
+    public class PopResult
     {
         /// <summary> pivot of the pop. </summary>
         /// <remarks> the pop refers to the UI elements such as popups. </remarks>

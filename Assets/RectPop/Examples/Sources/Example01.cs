@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 namespace RectPop
 {
-    public class Demo : MonoBehaviour
+    public class Example01 : MonoBehaviour
     {
         [Header("Settings")]
         [SerializeField] Vector2 _offset;
@@ -14,11 +14,11 @@ namespace RectPop
         [Header("References")]
         [SerializeField] private Canvas _baseCanvas;
         [SerializeField] private List<Button> _buttons;
-        [SerializeField] private RectTransform _popupRect;
-        [SerializeField] private Canvas _popupCanvas;
+        [SerializeField] private RectTransform _floatingUIRect;
+        [SerializeField] private Canvas _floatingUICanvas;
         [SerializeField] private Button _transparentButton;
 
-        private readonly RectPopController _controller = new();
+        private readonly PopController _controller = new();
 
         private void Awake()
         {
@@ -43,7 +43,7 @@ namespace RectPop
                         centerThreshold: _centerThreshold
                     );
 
-                    _controller.ProvideAndApply(request, _popupRect, _popupCanvas);
+                    _controller.RequestAndApply(request, _floatingUIRect, _floatingUICanvas);
 
                     SetActive(true);
                 });
@@ -53,7 +53,7 @@ namespace RectPop
 
             void SetActive(bool active)
             {
-                _popupRect.gameObject.SetActive(active);
+                _floatingUIRect.gameObject.SetActive(active);
                 _transparentButton.gameObject.SetActive(active);
             }
         }
