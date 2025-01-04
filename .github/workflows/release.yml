@@ -12,4 +12,4 @@ jobs:
       - name: Release
         uses: softprops/action-gh-release@v2
 permissions:
-  checks: write
+  contents: write
