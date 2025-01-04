@@ -7,7 +7,7 @@
 [![license](https://img.shields.io/badge/LICENSE-MIT-green.svg)](LICENSE.md)
 [![unity](https://img.shields.io/badge/Unity-2019.3+-black.svg)](#要件)
 
-**ドキュメント ([English](README.md), [日本語](README_JA.md))**
+**ドキュメント ( [English](README.md), [日本語](README_JA.md) )**
 
 ポップオーバー、ツールチップ、コンテキストメニューなどのフローティング UI を簡単に実装するためのモジュールを提供します。
 
