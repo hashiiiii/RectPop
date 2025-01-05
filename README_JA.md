@@ -77,7 +77,7 @@
 
 > [!NOTE]
 > フローティング位置はデフォルトから変更が可能です。
-> `PopProviderBase` を継承して、`PopProviderBase.GetPopAnchorWorldPoint`, `PopProviderBase.GetPopPivotPosition` を override してください。
+> `PopProvider` を継承して、`PopProvider.GetPopAnchorWorldPoint`, `PopProvider.GetPopPivotPosition` を override してください。
 
 1. Inside
 

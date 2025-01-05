@@ -76,7 +76,7 @@ The `Canvas.RenderMode` includes `ScreenSpaceOverlay`, `ScreenSpaceCamera`, and 
 There are three modes:
 
 > [!NOTE]
-> Floating positions can be customized. Inherit from `PopProviderBase` and override both `PopProviderBase.GetPopAnchorWorldPoint` and `PopProviderBase.GetPopPivotPosition`.
+> Floating positions can be customized. Inherit from `PopProvider` and override both `PopProvider.GetPopAnchorWorldPoint` and `PopProvider.GetPopPivotPosition`.
 
 1. Inside
 
