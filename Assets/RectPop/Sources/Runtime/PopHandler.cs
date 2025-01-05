@@ -45,7 +45,7 @@ namespace RectPop
             return result;
         }
 
-        public virtual void Apply(PopResult result, RectTransform baseRectTransform, Canvas baseCanvas)
+        public virtual void Apply(PopResult result, RectTransform floatingUIRectTransform, Canvas floatingUICanvas)
         {
             if (result is null)
             {
@@ -53,33 +53,33 @@ namespace RectPop
                 return;
             }
 
-            if (baseRectTransform is null)
+            if (floatingUIRectTransform is null)
             {
-                Debug.LogError($"{nameof(baseRectTransform)} is null.");
+                Debug.LogError($"{nameof(floatingUIRectTransform)} is null.");
                 return;
             }
 
-            if (baseCanvas is null)
+            if (floatingUICanvas is null)
             {
-                Debug.LogError($"{nameof(baseCanvas)} is null.");
+                Debug.LogError($"{nameof(floatingUICanvas)} is null.");
                 return;
             }
 
-            if (baseRectTransform.parent is not RectTransform baseParentRect)
+            if (floatingUIRectTransform.parent is not RectTransform floatingUIParentRect)
             {
-                Debug.LogError($"{nameof(baseRectTransform)} does not have a parent RectTransform.");
+                Debug.LogError($"{nameof(floatingUIRectTransform)} does not have a parent RectTransform.");
                 return;
             }
 
-            baseRectTransform.pivot = PositionUtility.GetPivot(result.Pivot);
-            baseRectTransform.anchorMin = baseRectTransform.anchorMax = baseParentRect.pivot = PositionUtility.GetPivot(Position.MiddleCenter);
+            floatingUIRectTransform.pivot = PositionUtility.GetPivot(result.Pivot);
+            floatingUIRectTransform.anchorMin = floatingUIRectTransform.anchorMax = floatingUIParentRect.pivot = PositionUtility.GetPivot(Position.MiddleCenter);
 
-            var camera = baseCanvas.renderMode == RenderMode.ScreenSpaceOverlay
+            var camera = floatingUICanvas.renderMode == RenderMode.ScreenSpaceOverlay
                 ? null
-                : baseCanvas.worldCamera;
+                : floatingUICanvas.worldCamera;
             
             var isConverted = RectTransformUtility.ScreenPointToLocalPointInRectangle(
-                baseParentRect,
+                floatingUIParentRect,
                 result.ScreenPoint,
                 camera,
                 out var localPoint
@@ -91,7 +91,7 @@ namespace RectPop
                 return;
             }
 
-            baseRectTransform.anchoredPosition = localPoint;
+            floatingUIRectTransform.anchoredPosition = localPoint;
         }
 
         public virtual void RequestAndApply(PopRequest request, RectTransform floatingUIRectTransform, Canvas floatingUICanvas)
