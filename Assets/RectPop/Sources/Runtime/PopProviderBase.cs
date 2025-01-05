@@ -87,24 +87,26 @@ namespace RectPop
             {
                 Position.TopLeft => popType switch
                 {
-                    PopType.OutsideHorizontal => corners[0],
-                    PopType.OutsideVertical => corners[2],
+                    PopType.OutsideHorizontal => corners[2],
+                    PopType.OutsideVertical => corners[0],
                     _ => GetBoundingBoxCenter(),
                 },
                 Position.TopCenter => popType switch
                 {
-                    PopType.OutsideHorizontal or PopType.OutsideVertical => (corners[0] + corners[3]) * 0.5f,
+                    PopType.OutsideHorizontal => corners[2],
+                    PopType.OutsideVertical => (corners[0] + corners[3]) * 0.5f,
                     _ => GetBoundingBoxCenter(),
                 },
                 Position.TopRight => popType switch
                 {
-                    PopType.OutsideHorizontal => corners[3],
-                    PopType.OutsideVertical => corners[1],
+                    PopType.OutsideHorizontal => corners[1],
+                    PopType.OutsideVertical => corners[3],
                     _ => GetBoundingBoxCenter(),
                 },
                 Position.MiddleLeft => popType switch
                 {
-                    PopType.OutsideHorizontal or PopType.OutsideVertical => (corners[2] + corners[3]) * 0.5f,
+                    PopType.OutsideHorizontal => (corners[2] + corners[3]) * 0.5f,
+                    PopType.OutsideVertical => corners[0],
                     _ => GetBoundingBoxCenter(),
                 },
                 Position.MiddleCenter => popType switch
@@ -115,24 +117,26 @@ namespace RectPop
                 },
                 Position.MiddleRight => popType switch
                 {
-                    PopType.OutsideHorizontal or PopType.OutsideVertical => (corners[0] + corners[1]) * 0.5f,
+                    PopType.OutsideHorizontal => (corners[0] + corners[1]) * 0.5f,
+                    PopType.OutsideVertical => corners[3],
                     _ => GetBoundingBoxCenter(),
                 },
                 Position.BottomLeft => popType switch
                 {
-                    PopType.OutsideHorizontal => corners[1],
-                    PopType.OutsideVertical => corners[3],
+                    PopType.OutsideHorizontal => corners[3],
+                    PopType.OutsideVertical => corners[1],
                     _ => GetBoundingBoxCenter(),
                 },
                 Position.BottomCenter => popType switch
                 {
-                    PopType.OutsideHorizontal or PopType.OutsideVertical => (corners[1] + corners[2]) * 0.5f,
+                    PopType.OutsideHorizontal => corners[3],
+                    PopType.OutsideVertical => (corners[1] + corners[2]) * 0.5f,
                     _ => GetBoundingBoxCenter(),
                 },
                 Position.BottomRight => popType switch
                 {
-                    PopType.OutsideHorizontal => corners[2],
-                    PopType.OutsideVertical => corners[0],
+                    PopType.OutsideHorizontal => corners[0],
+                    PopType.OutsideVertical => corners[2],
                     _ => GetBoundingBoxCenter(),
                 },
                 _ => GetBoundingBoxCenter(),
@@ -196,6 +200,7 @@ namespace RectPop
                 },
                 Position.TopCenter => popType switch
                 {
+                    PopType.OutsideHorizontal => Position.TopLeft,
                     _ => Position.TopCenter,
                 },
                 Position.TopRight => popType switch
@@ -204,6 +209,7 @@ namespace RectPop
                 },
                 Position.MiddleLeft => popType switch
                 {
+                    PopType.OutsideVertical => Position.TopLeft,
                     _ => Position.MiddleLeft,
                 },
                 Position.MiddleCenter => popType switch
@@ -214,6 +220,7 @@ namespace RectPop
                 },
                 Position.MiddleRight => popType switch
                 {
+                    PopType.OutsideVertical => Position.TopRight,
                     _ => Position.MiddleRight,
                 },
                 Position.BottomLeft => popType switch
@@ -222,6 +229,7 @@ namespace RectPop
                 },
                 Position.BottomCenter => popType switch
                 {
+                    PopType.OutsideHorizontal => Position.BottomLeft,
                     _ => Position.BottomCenter,
                 },
                 Position.BottomRight => popType switch

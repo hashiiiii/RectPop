@@ -5,7 +5,6 @@
 # RectPop
 
 [![license](https://img.shields.io/badge/LICENSE-MIT-green.svg)](LICENSE.md)
-[![unity](https://img.shields.io/badge/Unity-2019.3+-black.svg)](#要件)
 
 **ドキュメント ( [English](README.md), [日本語](README_JA.md) )**
 
@@ -16,6 +15,7 @@
 </p>
 
 ## 目次
+
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 <!-- param::title::詳細:: -->
@@ -39,41 +39,77 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## 概要
-任意の `RectTransform` をリクエストとして渡すと、フローティング UI を表示するのにちょうど良い位置や設定を計算して返します。
+
+`RectTransform` を持つ任意のオブジェクトと、そのオブジェクトが配置されている `Canvas` をリクエストとして渡すと、フローティング UI の表示に必要な設定を返します。
 
 ## 特徴
+
+### フローティング UI の共通化が容易
+
+前述したように、RectPop の計算ロジックでは、
+
+> `RectTransform` を持つ任意のオブジェクトと、そのオブジェクトが配置されている `Canvas`
+
+以外を要求しません。更にはフローティング UI とベースとなるオブジェクトの間には制約が存在しません。それゆえに、フローティング UI を 1 つ作成しておいて、リクエストを様々なオブジェクトから送るといった使い方が可能です。
+
+そのための仕組みも提供しています。実装例としては、[Example02Request.cs](Assets/RectPop/Examples/Sources/Example02Request.cs), [Example02Result.cs](Assets/RectPop/Examples/Sources/Example02Result.cs) をそれぞれ参照してください。
+
 ### 描画領域内への UI 配置
+
 レスポンスには `Pivot` や `Anchor` の設定が含まれています。これらをフローティング UI に適用することで、ほとんどのケースで画面内に UI を表示することができます。
 
 > [!WARNING]
-> フローティング UI そのものがあまりにも巨大な場合は画面外にはみ出します。
+> フローティング UI があまりにも巨大な場合や、過剰なオフセットを追加すると画面外に出てしまうことが想定されます。
 
-### 必要最小限のオプション
-- Inside
-- OutsideVertical
-- OutsideHorizontal
+設定の適用に必要なメソッドも提供しています。
 
-以上の 3 つの配置モードがあります。
+### フローティングオプション
+
+#### モード
+
+下記の 3 つがあります。
+
+> [!NOTE]
+> フローティング位置はデフォルトから変更が可能です。
+> `PopProviderBase` を継承して、`PopProviderBase.GetPopAnchorWorldPoint`, `PopProviderBase.GetPopPivotPosition` を override してください。
+
+1. Inside
+
+    オブジェクトの内側からフローティングします。
 
 <p align="center">
-  <img width="80%" src="Documentation/Images/multi_placement.gif" alt="ConceptMovie">
+  <img width="50%" src="Documentation/Images/inside.png" alt="Inside">
 </p>
 
-オフセットを追加することができます。
+2. OutsideVertical
+
+    オブジェクトの上下にフローティングします。
+
+<p align="center">
+  <img width="50%" src="Documentation/Images/outside_vertical.png" alt="OutsideVertical">
+</p>
+
+3. OutsideHorizontal
+
+    オブジェクトの左右にフローティングします。
+
+<p align="center">
+  <img width="50%" src="Documentation/Images/outside_horizontal.png" alt="OutsideHorizontal">
+</p>
+
+#### オフセット
+
+上下左右にオフセットを追加することができます。
 
 <p align="center">
   <img width="80%" src="Documentation/Images/offset.gif" alt="ConceptMovie">
 </p>
 
 ### 複数解像度対応
-GIF でも示されているように、端末の解像度を加味した計算結果を返します。動的に解像度が変わるようなケースにおいても、再計算さえすれば正しい位置に UI を表示することができます。
 
-### 疎結合な実装
-RectPop のロジックは UI に依存しません。それゆえ、単一のフローティング UI を複数個所で使いまわすような実装も簡単に行うことができます。
+[冒頭の GIF](#rectpop) からも分かるように、画面の解像度を加味した上で計算結果を返します。あらゆる解像度の端末にも対応できる上に、動的に解像度が変わるようなケースにおいても、再計算さえすれば正しい位置にフローティング UI を表示することができます。
+
 ## セットアップ
-
-### 要件
-* Unity 2019.3 or later
 
 ### インストール
 
@@ -81,7 +117,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
 
 1. Unity を開き、`ウィンドウ` > `パッケージマネージャー` を選択します。
 2. 左上の `+` ボタンをクリックし、`Git URL からパッケージを追加...` を選択します。
-3. 以下の URL を入力します。：`https://github.com/hashiiiii/RectPop.git?path=/Assets/RectPop/Sources`
+3. 以下の URL を入力します。： `https://github.com/hashiiiii/RectPop.git?path=/Assets/RectPop/Sources`
 4. `追加` をクリックしてパッケージをインストールします。
 
 詳細については、Unity マニュアルの [Git URL からのインストール](https://docs.unity3d.com/ja/2019.4/Manual/upm-ui-giturl.html) を参照してください。
@@ -93,83 +129,84 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
 
 1. Canvas と RectTransform を持つオブジェクトをそれぞれ作成します。
 
-Unity Editor 上でフローティング UI のベースとなる `Canvas`, `RectTransform` を持つオブジェクトを用意します。
+    Unity Editor 上でフローティング UI のベースとなる `Canvas`, `RectTransform` を用意します。
+
 
 2. `PopController` インスタンスを取得します。
 
-`PopController` は計算ロジック (`IPopProvider`) のラッパーです。
+    `PopController` は計算ロジック (`IPopProvider`) のハンドラーです。
 
-```csharp
-public class Example01 : MonoBehaviour
-{
-    private readonly PopController _controller = new();
-}
-```
-
-`PopController` インスタンスは `IPopProvider` を要求します。デフォルトコンストラクタでは `DefaultPopProvider` が使用されています。ほとんどのケースで、こちらを使用すれば事足りると思います。
-
-```csharp
-public class PopController
-{
-    // static
-    private static readonly IPopProvider Default = new DefaultPopProvider();
-  
-    // dependency
-    private readonly IPopProvider _provider;
-  
-    // constructor
-    public PopController(IPopProvider provider)
+    ```csharp
+    public class Example01 : MonoBehaviour
     {
-        _provider = provider;
+        private readonly PopController _controller = new();
     }
-  
-    public PopController() : this(Default)
+    ```
+
+    `PopController` インスタンスは `IPopProvider` を要求します。デフォルトコンストラクタでは `DefaultPopProvider` が使用されています。ほとんどのケースで、こちらを使用すれば要件を満たせると思います。
+
+    ```csharp
+    public class PopController
     {
+        // static
+        private static readonly IPopProvider Default = new DefaultPopProvider();
+      
+        // dependency
+        private readonly IPopProvider _provider;
+      
+        // constructor
+        public PopController(IPopProvider provider)
+        {
+            _provider = provider;
+        }
+      
+        public PopController() : this(Default)
+        {
+        }
+    
+        // ----- code omitted -----
     }
+    ```
 
-    // ----- code omitted -----
-}
-```
-
-> [!TIP]
-> 同時に複数の `IPopProvider` を取り扱う必要がない場合は、`PopController` インスタンスはシングルトンとして扱うのも良いと思います。
+    > [!NOTE]
+    > 同時に複数の `IPopProvider` を取り扱う必要がない場合は、`PopController` インスタンスはシングルトンとして扱うのも良いと思います。
 
 3. `PopController.RequestAndApply` を実行します。
 
-今回の例では、ボタンのクリックイベントをトリガーにしてフローティング UI を表示します。
+    今回の例では、ボタンのクリックイベントをトリガーにしてフローティング UI を表示します。
 
-```csharp
-public class Example01 : MonoBehaviour
-{
-    // base
-    [SerializeField] private Canvas _baseCanvas;
-    [SerializeField] private Button _button;
-
-    // floating ui
-    [SerializeField] private RectTransform _popRect;
-    [SerializeField] private Canvas _popCanvas;
-
-    private readonly PopController _controller = new();
-
-    private void Awake()
+    ```csharp
+    public class Example01 : MonoBehaviour
     {
-        _button.onClick.AddListener(() =>
+        // base
+        [SerializeField] private Canvas _baseCanvas;
+        [SerializeField] private Button _button;
+    
+        // floating ui
+        [SerializeField] private RectTransform _popRect;
+        [SerializeField] private Canvas _popCanvas;
+    
+        private readonly PopController _controller = new();
+    
+        private void Awake()
         {
-            // get base rect transform
-            var baseRectTransform = _button.GetComponent<RectTransform>();
-
-            // create request
-            var request = new PopRequest(baseRectTransform, _baseCanvas);
-
-            // send request and apply result to floating ui
-            _controller.RequestAndApply(request, _popRect, _popCanvas);
-
-            // show floating ui
-            _popRect.gameObject.SetActive(true);
-        });
+            _button.onClick.AddListener(() =>
+            {
+                // get base rect transform
+                var baseRectTransform = _button.GetComponent<RectTransform>();
+    
+                // create request
+                var request = new PopRequest(baseRectTransform, _baseCanvas);
+    
+                // send request and apply result to floating ui
+                _controller.RequestAndApply(request, _popRect, _popCanvas);
+    
+                // show floating ui
+                _popRect.gameObject.SetActive(true);
+            });
+        }
     }
-}
-```
+    ```
 
 ## おすすめの使い方
 
@@ -180,77 +217,82 @@ public class Example01 : MonoBehaviour
 
 1. [ミニマルな使い方](#ミニマルな使い方)の 1, 2 を確認してください。
 
-ここまでは同じです。
+    ここまでは同じです。
+
 
 2. `PopController.Request` を実行します。
 
-こちらは[ミニマルな使い方](#ミニマルな使い方)の 3 とほぼ同じ実装となっています。フローティング UI の表示は別クラスに委譲しているため、よりシンプルな実装となっていることが分かります。
+    こちらは[ミニマルな使い方](#ミニマルな使い方)の 3 とほぼ同じ実装となっています。フローティング UI の表示は別クラスに委譲しているため、よりシンプルな実装となっていることが分かります。
 
-```csharp
-public class Example02Request : MonoBehaviour
-{
-    // base
-    [SerializeField] private Canvas _baseCanvas;
-    [SerializeField] private Button _button;
-
-    private readonly PopController _controller = new();
-
-    private void Awake()
+    ```csharp
+    public class Example02Request : MonoBehaviour
     {
-        _button.onClick.AddListener(() =>
+        // base
+        [SerializeField] private Canvas _baseCanvas;
+        [SerializeField] private Button _button;
+    
+        private readonly PopController _controller = new();
+    
+        private void Awake()
         {
-            // get base rect transform
-            var baseRectTransform = _button.GetComponent<RectTransform>();
-
-            // create request
-            var request = new PopRequest(baseRectTransform, _baseCanvas);
-
-            // send request
-            _controller.Request(request);
-        });
+            _button.onClick.AddListener(() =>
+            {
+                // get base rect transform
+                var baseRectTransform = _button.GetComponent<RectTransform>();
+    
+                // create request
+                var request = new PopRequest(baseRectTransform, _baseCanvas);
+    
+                // send request
+                _controller.Request(request);
+            });
+        }
     }
-}
-```
+    ```
 
 3. `PopController.Apply` を実行します。
 
-ここではフローティング UI の表示を行うクラスを作成しています。`PopDispatcher.OnDispatched` イベントを購読し、結果を受け取って表示します。
+    ここではフローティング UI の表示を行うクラスを作成しています。`PopDispatcher.OnDispatched` イベントを購読し、結果を受け取って表示します。
 
-```csharp
-public class Example02Result : MonoBehaviour
-{
-    // floating ui
-    [SerializeField] private RectTransform _floatingRect;
-    [SerializeField] private Canvas _floatingCanvas;
-
-    private readonly PopController _controller = new();
-
-    // register event
-    private void Awake()
+    ```csharp
+    public class Example02Result : MonoBehaviour
     {
-        PopDispatcher.OnDispatched += OnPopDispatched;
+        // floating ui
+        [SerializeField] private RectTransform _floatingRect;
+        [SerializeField] private Canvas _floatingCanvas;
+    
+        private readonly PopController _controller = new();
+    
+        // register event
+        private void Awake()
+        {
+            PopDispatcher.OnDispatched += OnPopDispatched;
+        }
+    
+        // unregister event
+        private void OnDestroy()
+        {
+            PopDispatcher.OnDispatched -= OnPopDispatched;
+        }
+    
+        // apply result to floating ui
+        private void OnPopDispatched(PopDispatchedEvent ev)
+        {
+            _controller.Apply(ev.Result, _floatingRect, _floatingCanvas);
+            _floatingRect.gameObject.SetActive(true);
+        }
     }
-
-    // unregister event
-    private void OnDestroy()
-    {
-        PopDispatcher.OnDispatched -= OnPopDispatched;
-    }
-
-    // apply result to floating ui
-    private void OnPopDispatched(PopDispatchedEvent ev)
-    {
-        _controller.Apply(ev.Result, _floatingRect, _floatingCanvas);
-        _floatingRect.gameObject.SetActive(true);
-    }
-}
-```
-
-> [!TIP]
-> 1. `PopDispatcher` は `event` を用いた実装となっていますが、[R3.Observable.FromEvent](https://github.com/Cysharp/R3?tab=readme-ov-file#fromevent) などの他 OSS のメソッドを用いることでよりスマートな実装を目指せると思います。(まだ試せていないので保証はできません)
-> 2. 実際に置き換える場合には `PopDispatcher` を `R3.Observable.FromEvent` などの別の実装に差し替える必要があります。
-> 3. `PopController` を継承したクラスを作成し、`PopController.Dispatch` を override します。
-> 4. 先ほど作成した replaced `PopDispatcher` なクラスを上記の Dispatch メソッド内で使用してください。
+    ```
+    
+    > [!NOTE]
+    > 
+    > `PopDispatcher` は `event` を用いた実装となっていますが、[R3.Observable.FromEvent](https://github.com/Cysharp/R3?tab=readme-ov-file#fromevent) などの他 OSS のメソッドを用いることでよりスマートな実装を目指せると思います。(まだ試せていないので保証はできません)
+    > 
+    > 実際に置き換える場合には `PopDispatcher` を `R3.Observable.FromEvent` などの別の実装に差し替える必要があります。
+    >
+    > `PopController` を継承したクラスを作成し、`PopController.Dispatch` を override します。
+    >
+    > 先ほど作成した replaced `PopDispatcher` なクラスを上記で override した `Dispatch` メソッド内で使用してください。
 
 ## ライセンス
 
