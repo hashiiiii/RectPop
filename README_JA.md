@@ -168,8 +168,8 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
     }
     ```
 
-    > [!NOTE]
-    > 同時に複数の `IPopProvider` を取り扱う必要がない場合は、`PopController` インスタンスはシングルトンとして扱うのも良いと思います。
+> [!NOTE]
+> 同時に複数の `IPopProvider` を取り扱う必要がない場合は、`PopController` インスタンスはシングルトンとして扱うのも良いと思います。
 
 3. `PopController.RequestAndApply` を実行します。
 
@@ -284,15 +284,15 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
     }
     ```
     
-    > [!NOTE]
-    > 
-    > `PopDispatcher` は `event` を用いた実装となっていますが、[R3.Observable.FromEvent](https://github.com/Cysharp/R3?tab=readme-ov-file#fromevent) などの他 OSS のメソッドを用いることでよりスマートな実装を目指せると思います。(まだ試せていないので保証はできません)
-    > 
-    > 実際に置き換える場合には `PopDispatcher` を `R3.Observable.FromEvent` などの別の実装に差し替える必要があります。
-    >
-    > `PopController` を継承したクラスを作成し、`PopController.Dispatch` を override します。
-    >
-    > 先ほど作成した replaced `PopDispatcher` なクラスを上記で override した `Dispatch` メソッド内で使用してください。
+> [!NOTE]
+> 
+> `PopDispatcher` は `event` を用いた実装となっていますが、[R3.Observable.FromEvent](https://github.com/Cysharp/R3?tab=readme-ov-file#fromevent) などの他 OSS のメソッドを用いることでよりスマートな実装を目指せると思います。(まだ試せていないので保証はできません)
+> 
+> 実際に置き換える場合には `PopDispatcher` を `R3.Observable.FromEvent` などの別の実装に差し替える必要があります。
+>
+> `PopController` を継承したクラスを作成し、`PopController.Dispatch` を override します。
+>
+> 先ほど作成した replaced `PopDispatcher` なクラスを上記で override した `Dispatch` メソッド内で使用してください。
 
 ## ライセンス
 
