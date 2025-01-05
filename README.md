@@ -26,6 +26,7 @@ Provides modules for easily implementing floating UIs such as popovers, tooltips
 - [Features](#features)
   - [Easily unify floating UIs](#easily-unify-floating-uis)
   - [Place the UI within the rendering area](#place-the-ui-within-the-rendering-area)
+  - [Support for All Render Modes](#support-for-all-render-modes)
   - [Floating Options](#floating-options)
     - [Modes](#modes)
     - [Offset](#offset)
