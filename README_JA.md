@@ -62,7 +62,11 @@
 > [!WARNING]
 > フローティング UI があまりにも巨大な場合や、過剰なオフセットを追加すると画面外に出てしまうことが想定されます。
 
-設定の適用に必要なメソッドも提供しています。
+設定の適用に必要なメソッドも提供しています。[PopController.cs](Assets/RectPop/Sources/Runtime/PopController.cs) の `Apply` メソッドを参照してください。
+
+### 全ての RenderMode に対応
+
+`Canvas.RenderMode` には `ScreenSpaceOverlay`, `ScreenSpaceCamera`, `WorldSpace` がありますが、RectPop はこれら全てに対応しています。
 
 ### フローティングオプション
 

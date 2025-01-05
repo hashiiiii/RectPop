@@ -62,7 +62,11 @@ The response includes settings such as `Pivot` and `Anchor`. By applying these t
 > [!WARNING]
 > If the floating UI is extremely large or if you add an excessive offset, it may be displayed partially or fully outside the screen.
 
-We also provide the necessary methods to apply these settings.
+We also provide the necessary methods to apply these settings. Refer to the `Apply` method in [PopController.cs](Assets/RectPop/Sources/Runtime/PopController.cs).
+
+### Support for All Render Modes
+
+The `Canvas.RenderMode` includes `ScreenSpaceOverlay`, `ScreenSpaceCamera`, and `WorldSpace`, and RectPop supports all of them.
 
 ### Floating Options
 
