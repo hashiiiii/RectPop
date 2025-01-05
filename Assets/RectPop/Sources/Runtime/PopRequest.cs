@@ -16,13 +16,15 @@ namespace RectPop
         public readonly PopType PopType;
         public readonly Vector2 Offset;
         public readonly float CenterThreshold;
+        public readonly object Context;
 
         public PopRequest(
             RectTransform baseRectTransform,
             Canvas baseCanvas,
             PopType popType = PopType.Inside,
             Vector2 offset = default,
-            float centerThreshold = 0f
+            float centerThreshold = 0f,
+            object context = null
         )
         {
             BaseRectTransform = baseRectTransform;
@@ -30,6 +32,7 @@ namespace RectPop
             PopType = popType;
             Offset = offset;
             CenterThreshold = centerThreshold;
+            Context = context;
         }
     }
 }

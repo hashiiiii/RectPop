@@ -72,7 +72,7 @@ namespace RectPop
             );
 
             // 11. return the result
-            return new PopResult(pivot: pivotPosition, screenPoint: popAnchorScreenPoint);
+            return new PopResult(pivot: pivotPosition, screenPoint: popAnchorScreenPoint, context: request.Context);
         }
 
         /// <summary> determines the pop anchor world point based on the given position, pop type, and bounding box corners. </summary>

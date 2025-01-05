@@ -13,16 +13,16 @@ namespace RectPop
 
         private void Awake()
         {
-            foreach (var button in _buttons)
+            for (var i = 0; i < _buttons.Count; i++)
             {
+                var button = _buttons[i];
+                var index = i;
+
                 button.onClick.AddListener(() =>
                 {
                     var baseRectTransform = button.GetComponent<RectTransform>();
 
-                    var request = new PopRequest(
-                        baseRectTransform: baseRectTransform,
-                        baseCanvas: _baseCanvas
-                    );
+                    var request = new PopRequest(baseRectTransform, _baseCanvas, context: index);
 
                     _controller.Request(request);
                 });
