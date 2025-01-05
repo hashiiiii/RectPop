@@ -32,7 +32,7 @@ Provides modules for easily implementing floating UIs such as popovers, tooltips
     - [Offset](#offset)
   - [Multi-resolution support](#multi-resolution-support)
 - [Setup](#setup)
-    - [Installation](#installation)
+  - [Installation](#installation)
 - [Minimal usage](#minimal-usage)
 - [Recommended usage](#recommended-usage)
 - [License](#license)
