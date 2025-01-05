@@ -9,7 +9,7 @@ namespace RectPop
         [SerializeField] private Canvas _baseCanvas;
         [SerializeField] private List<Button> _buttons;
 
-        private readonly PopController _controller = new();
+        private readonly PopHandler _handler = new();
 
         private void Awake()
         {
@@ -24,7 +24,7 @@ namespace RectPop
 
                     var request = new PopRequest(baseRectTransform, _baseCanvas, context: index);
 
-                    _controller.Request(request);
+                    _handler.Request(request);
                 });
             }
         }

@@ -18,7 +18,7 @@ namespace RectPop
         [SerializeField] private Canvas _floatingUICanvas;
         [SerializeField] private Button _transparentButton;
 
-        private readonly PopController _controller = new();
+        private readonly PopHandler _handler = new();
 
         private void Awake()
         {
@@ -43,7 +43,7 @@ namespace RectPop
                         centerThreshold: _centerThreshold
                     );
 
-                    _controller.RequestAndApply(request, _floatingUIRect, _floatingUICanvas);
+                    _handler.RequestAndApply(request, _floatingUIRect, _floatingUICanvas);
 
                     SetActive(true);
                 });

@@ -8,7 +8,7 @@
 
 **Documentation ( [English](README.md), [日本語](README_JA.md) )**
 
-Provides modules for easily implementing floating UIs such as popovers, tooltips, context menus, etc.
+Provides modules for easily implementing floating UIs such as popovers, tooltips, and context menus.
 
 <p align="center">
   <img width="50%" src="Documentation/Images/multi_resolution.gif" alt="ConceptMovie">
@@ -24,14 +24,15 @@ Provides modules for easily implementing floating UIs such as popovers, tooltips
 
 - [Overview](#overview)
 - [Features](#features)
-  - [Easily unify floating UIs](#easily-unify-floating-uis)
-  - [Place the UI within the rendering area](#place-the-ui-within-the-rendering-area)
-  - [Floating Options](#floating-options)
-    - [Modes](#modes)
-    - [Offset](#offset)
-  - [Multi-resolution support](#multi-resolution-support)
+    - [Easily unify floating UIs](#easily-unify-floating-uis)
+    - [Place the UI within the rendering area](#place-the-ui-within-the-rendering-area)
+    - [Support for All Render Modes](#support-for-all-render-modes)
+    - [Floating Options](#floating-options)
+        - [Modes](#modes)
+        - [Offset](#offset)
+    - [Multi-resolution support](#multi-resolution-support)
 - [Setup](#setup)
-  - [Installation](#installation)
+    - [Installation](#installation)
 - [Minimal usage](#minimal-usage)
 - [Recommended usage](#recommended-usage)
 - [License](#license)
@@ -41,28 +42,28 @@ Provides modules for easily implementing floating UIs such as popovers, tooltips
 
 ## Overview
 
-When you pass an object that has a `RectTransform` and the `Canvas` on which that object is placed as a request, RectPop returns the settings necessary to display a floating UI.
+By passing an object with a `RectTransform` and the `Canvas` where the object is placed as a request, RectPop returns the necessary settings to display a floating UI.
 
 ## Features
 
 ### Easily unify floating UIs
 
-As mentioned earlier, RectPop’s calculation logic does not require anything other than
+As mentioned earlier, RectPop’s calculation logic does not require anything other than:
 
-> an object with a `RectTransform` and the `Canvas` on which the object is placed.
+> An object with a `RectTransform` and the `Canvas` where the object is placed.
 
-Furthermore, there are no constraints between the base object and the floating UI. Therefore, you can create only one floating UI and send requests from various objects.
+Furthermore, there are no constraints between the base object and the floating UI. This allows you to create a single floating UI and handle requests from various objects.
 
-We also provide a mechanism to achieve that. For an implementation example, please refer to [Example02Request.cs](Assets/RectPop/Examples/Sources/Example02Request.cs) and [Example02Result.cs](Assets/RectPop/Examples/Sources/Example02Result.cs).
+We also provide mechanisms to support this. For implementation examples, refer to [Example02Request.cs](Assets/RectPop/Examples/Sources/Example02Request.cs) and [Example02Result.cs](Assets/RectPop/Examples/Sources/Example02Result.cs).
 
 ### Place the UI within the rendering area
 
-The response includes settings such as `Pivot` and `Anchor`. By applying these to the floating UI, you can display the UI on the screen in most cases.
+The response includes settings such as `Pivot` and `Anchor`. Applying these settings to the floating UI ensures that, in most cases, the UI remains visible within the screen.
 
 > [!WARNING]
-> If the floating UI is extremely large or if you add an excessive offset, it may be displayed partially or fully outside the screen.
+> Extremely large floating UIs or excessive offsets may cause the UI to exceed the screen boundaries.
 
-We also provide the necessary methods to apply these settings. Refer to the `Apply` method in [PopController.cs](Assets/RectPop/Sources/Runtime/PopController.cs).
+We also provide methods required to apply these settings. Refer to the `Apply` method in [PopHandler.cs](Assets/RectPop/Sources/Runtime/PopHandler.cs).
 
 ### Support for All Render Modes
 
@@ -75,12 +76,11 @@ The `Canvas.RenderMode` includes `ScreenSpaceOverlay`, `ScreenSpaceCamera`, and 
 There are three modes:
 
 > [!NOTE]
-> You can change the default floating position.
-> Inherit from `PopProviderBase` and override both `PopProviderBase.GetPopAnchorWorldPoint` and `PopProviderBase.GetPopPivotPosition`.
+> Floating positions can be customized. Inherit from `PopProviderBase` and override both `PopProviderBase.GetPopAnchorWorldPoint` and `PopProviderBase.GetPopPivotPosition`.
 
 1. Inside
 
-   Floats from the inside of the object.
+   Floats inside the object.
 
 <p align="center">
   <img width="50%" src="Documentation/Images/inside.png" alt="Inside">
@@ -104,7 +104,7 @@ There are three modes:
 
 #### Offset
 
-You can add offsets to the top, bottom, left, or right.
+Offsets can be added to the top, bottom, left, or right.
 
 <p align="center">
   <img width="80%" src="Documentation/Images/offset.gif" alt="ConceptMovie">
@@ -112,7 +112,7 @@ You can add offsets to the top, bottom, left, or right.
 
 ### Multi-resolution support
 
-As you can see in the [GIF at the top](#rectpop), RectPop returns calculation results that consider the screen resolution. This allows you to handle any resolution. In cases where the resolution changes dynamically, you can display the floating UI in the correct position by recalculating.
+As shown in the [GIF at the top](#rectpop), RectPop returns calculation results considering the screen resolution. This ensures compatibility with devices of any resolution. Even in dynamic resolution changes, recalculating allows the floating UI to maintain its correct position.
 
 ## Setup
 
@@ -126,7 +126,7 @@ You can install RectPop using Unity’s Package Manager.
    `https://github.com/hashiiiii/RectPop.git?path=/Assets/RectPop/Sources`
 4. Click `Add` to install the package.
 
-For more details, please refer to [Installing from a Git URL](https://docs.unity3d.com/ja/2019.4/Manual/upm-ui-giturl.html) in the Unity manual.
+For more details, please refer to [Installing from a Git URL](https://docs.unity3d.com/2019.4/Manual/upm-ui-giturl.html) in the Unity manual.
 
 ## Minimal usage
 
@@ -135,37 +135,37 @@ For more details, please refer to [Installing from a Git URL](https://docs.unity
 
 1. Create a Canvas and an object with a RectTransform.
 
-   In the Unity Editor, prepare a `Canvas` and `RectTransform` which will be the base for your floating UI.
+   In the Unity Editor, prepare a `Canvas` and a `RectTransform`, which will serve as the base for your floating UI.
 
-2. Obtain an instance of `PopController`.
+2. Obtain an instance of `PopHandler`.
 
-   `PopController` is a handler for the calculation logic (`IPopProvider`).
+   `PopHandler` is a handler for the calculation logic (`IPopProvider`).
 
     ```csharp
     public class Example01 : MonoBehaviour
     {
-        private readonly PopController _controller = new();
+        private readonly PopHandler _handler = new();
     }
     ```
 
-   The `PopController` instance requires an `IPopProvider`. By default, the parameterless constructor uses `DefaultPopProvider`. In most cases, this will meet your requirements.
+   The `PopHandler` instance requires an `IPopProvider`. By default, the parameterless constructor uses `PopProvider`. In most cases, this will meet your requirements.
 
     ```csharp
-    public class PopController
+    public class PopHandler
     {
         // static
-        private static readonly IPopProvider Default = new DefaultPopProvider();
+        private static readonly IPopProvider Default = new PopProvider();
       
         // dependency
         private readonly IPopProvider _provider;
       
         // constructor
-        public PopController(IPopProvider provider)
+        public PopHandler(IPopProvider provider)
         {
             _provider = provider;
         }
       
-        public PopController() : this(Default)
+        public PopHandler() : this(Default)
         {
         }
     
@@ -174,11 +174,11 @@ For more details, please refer to [Installing from a Git URL](https://docs.unity
     ```
 
 > [!NOTE]
-> If you do not need to handle multiple `IPopProvider` instances at once, you can also treat the `PopController` instance as a singleton.
+> If you do not need to handle multiple `IPopProvider` instances at once, you can treat the `PopHandler` instance as a singleton.
 
-3. Run `PopController.RequestAndApply`.
+3. Run `PopHandler.RequestAndApply`.
 
-   In this example, we display the floating UI when a button is clicked.
+   In this example, the floating UI is displayed when a button is clicked.
 
     ```csharp
     public class Example01 : MonoBehaviour
@@ -191,7 +191,7 @@ For more details, please refer to [Installing from a Git URL](https://docs.unity
         [SerializeField] private RectTransform _popRect;
         [SerializeField] private Canvas _popCanvas;
     
-        private readonly PopController _controller = new();
+        private readonly PopHandler _handler = new();
     
         private void Awake()
         {
@@ -204,7 +204,7 @@ For more details, please refer to [Installing from a Git URL](https://docs.unity
                 var request = new PopRequest(baseRectTransform, _baseCanvas);
     
                 // send request and apply result to floating ui
-                _controller.RequestAndApply(request, _popRect, _popCanvas);
+                _handler.RequestAndApply(request, _popRect, _popCanvas);
     
                 // show floating ui
                 _popRect.gameObject.SetActive(true);
@@ -215,18 +215,18 @@ For more details, please refer to [Installing from a Git URL](https://docs.unity
 
 ## Recommended usage
 
-In the [minimal usage](#minimal-usage) example, both the base UI and the floating UI references are implemented in the same file. However, in practice, you might want to **unify the floating UI to be used in multiple contexts**. Below is an example of how you can separate them into different files.
+In [Minimal usage](#minimal-usage), both the base UI and the floating UI are referenced and implemented in the same file. However, in practice, you might want to **unify floating UIs for multiple contexts**. Below is an example of how to separate them into different files.
 
 > [!NOTE]
 > An example scene is available at `Assets/RectPop/Examples/Example02.unity`. Refer to it as needed.
 
-1. Refer to steps 1 and 2 of the [minimal usage](#minimal-usage) section.
+1. Follow steps 1 and 2 from [Minimal usage](#minimal-usage).
 
-   It is essentially the same as before.
+   This part is the same.
 
-2. Run `PopController.Request`.
+2. Run `PopHandler.Request`.
 
-   This part is almost the same as step 3 in [minimal usage](#minimal-usage). Since the floating UI display is delegated to a different class, the implementation here is simpler.
+   This part is almost the same as step 3 in [Minimal usage](#minimal-usage). Since the display logic for the floating UI is delegated to a different class, the implementation is simpler.
 
     ```csharp
     public class Example02Request : MonoBehaviour
@@ -235,7 +235,7 @@ In the [minimal usage](#minimal-usage) example, both the base UI and the floatin
         [SerializeField] private Canvas _baseCanvas;
         [SerializeField] private Button _button;
     
-        private readonly PopController _controller = new();
+        private readonly PopHandler _handler = new();
     
         private void Awake()
         {
@@ -248,15 +248,15 @@ In the [minimal usage](#minimal-usage) example, both the base UI and the floatin
                 var request = new PopRequest(baseRectTransform, _baseCanvas);
     
                 // send request
-                _controller.Request(request);
+                _handler.Request(request);
             });
         }
     }
     ```
 
-3. Run `PopController.Apply`.
+3. Run `PopHandler.Apply`.
 
-   Here we create a class to display the floating UI. We subscribe to the `PopDispatcher.OnDispatched` event, receive the result, and display it.
+   Here we create a class to display the floating UI. Subscribe to the `PopDispatcher.OnDispatched` event, receive the result, and display it.
 
     ```csharp
     public class Example02Result : MonoBehaviour
@@ -265,7 +265,7 @@ In the [minimal usage](#minimal-usage) example, both the base UI and the floatin
         [SerializeField] private RectTransform _floatingRect;
         [SerializeField] private Canvas _floatingCanvas;
     
-        private readonly PopController _controller = new();
+        private readonly PopHandler _handler = new();
     
         // register event
         private void Awake()
@@ -282,7 +282,7 @@ In the [minimal usage](#minimal-usage) example, both the base UI and the floatin
         // apply result to floating ui
         private void OnPopDispatched(PopDispatchedEvent ev)
         {
-            _controller.Apply(ev.Result, _floatingRect, _floatingCanvas);
+            _handler.Apply(ev.Result, _floatingRect, _floatingCanvas);
             _floatingRect.gameObject.SetActive(true);
         }
     }
@@ -290,23 +290,23 @@ In the [minimal usage](#minimal-usage) example, both the base UI and the floatin
 
 > [!NOTE]
 >
-> `PopDispatcher` is implemented using an `event`. You can aim for a cleaner implementation by using other OSS methods like [R3.Observable.FromEvent](https://github.com/Cysharp/R3?tab=readme-ov-file#fromevent) (not tested yet, so no guarantee).
+> While `PopDispatcher` is implemented using an `event`, you can aim for a cleaner implementation by using other OSS methods such as [R3.Observable.FromEvent](https://github.com/Cysharp/R3?tab=readme-ov-file#fromevent) (not yet tested, so not guaranteed).
 >
-> If you actually replace it, you would need to substitute `PopDispatcher` with the new class, which uses `R3.Observable.FromEvent` or similar.
+> If replacing it, substitute `PopDispatcher` with a new class that uses `R3.Observable.FromEvent` or similar.
 >
-> In that case, create a class that inherits `PopController` and override `PopController.Dispatch`.
+> Create a class inheriting from `PopHandler`, and override `PopHandler.Dispatch`.
 >
-> Then, in your overridden `Dispatch` method, use the newly replaced `PopDispatcher`.
+> Use the replaced `PopDispatcher` class in the overridden `Dispatch` method.
 
 ## License
 
 This software is released under the MIT License.  
-You are free to use it within the scope of the license. However, please note that the following copyright and license statements are required:
+You are free to use it within the scope of the license. However, the following copyright and license notices are required:
 
 * [LICENSE.md](LICENSE.md)
 
-Also, this document’s table of contents is created using the following software:
+Additionally, this document’s table of contents was generated using the following software:
 
 * [toc-generator](https://github.com/technote-space/toc-generator)
 
-For more details about the toc-generator license, please refer to [Third Party Notices.md](Thirs%20Party%20Notices.md).
+For more details about the toc-generator license, refer to [Third Party Notices.md](Third%20Party%20Notices.md).

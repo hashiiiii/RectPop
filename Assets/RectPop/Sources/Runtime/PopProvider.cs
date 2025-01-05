@@ -2,11 +2,8 @@ using UnityEngine;
 
 namespace RectPop
 {
-    public abstract class PopProviderBase : IPopProvider
+    public class PopProvider : IPopProvider
     {
-        /// <summary> provides a pop result based on the given pop request </summary>
-        /// <param name="request"> the pop request containing necessary parameters. </param>
-        /// <returns> pop result with the calculated pivot and screen point </returns>
         public virtual PopResult Provide(PopRequest request)
         {
             if (request is null)
@@ -75,12 +72,6 @@ namespace RectPop
             return new PopResult(pivot: pivotPosition, screenPoint: popAnchorScreenPoint, context: request.Context);
         }
 
-        /// <summary> determines the pop anchor world point based on the given position, pop type, and bounding box corners. </summary>
-        /// <param name="position"> the position of the bounding box. </param>
-        /// <param name="popType"> the pop type to be applied. </param>
-        /// <param name="corners"> the corners of the bounding box. </param>
-        /// <returns> the calculated pop anchor world point. </returns>
-        /// <remarks> the pop refers to the UI elements such as popups. </remarks>
         protected virtual Vector3 GetPopAnchorWorldPoint(Position position, PopType popType, Vector3[] corners)
         {
             return position switch
@@ -148,10 +139,6 @@ namespace RectPop
             }
         }
 
-        /// <summary> applies the specified offset to the pop anchor screen point based on the pivot position. </summary>
-        /// <param name="popAnchorScreenPoint"> the screen point of the pop anchor to be modified. </param>
-        /// <param name="pivotPosition"> the pivot position used to determine the direction of the offset. </param>
-        /// <param name="offset"> the offset to be applied to the pop anchor screen point. </param>
         protected virtual void ApplyOffset(ref Vector2 popAnchorScreenPoint, Position pivotPosition, Vector2 offset)
         {
             // apply vertical offset
@@ -185,11 +172,6 @@ namespace RectPop
             }
         }
 
-        /// <summary> determines the pop pivot position based on the given position and pop type. </summary>
-        /// <param name="position"> the position of the bounding box. </param>
-        /// <param name="popType"> the pop type to be applied. </param>
-        /// <returns> the calculated pop pivot position. </returns>
-        /// <remarks> the pop refers to the UI elements such as popups. </remarks>
         protected virtual Position GetPopPivotPosition(Position position, PopType popType)
         {
             return position switch
@@ -260,7 +242,6 @@ namespace RectPop
             if (isBelow && isYAxis) return Position.BottomCenter;
             if (isBelow && isRight) return Position.BottomRight;
 
-            // fallback
             return Position.MiddleCenter;
         }
     }

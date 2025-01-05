@@ -62,7 +62,7 @@
 > [!WARNING]
 > フローティング UI があまりにも巨大な場合や、過剰なオフセットを追加すると画面外に出てしまうことが想定されます。
 
-設定の適用に必要なメソッドも提供しています。[PopController.cs](Assets/RectPop/Sources/Runtime/PopController.cs) の `Apply` メソッドを参照してください。
+設定の適用に必要なメソッドも提供しています。[PopHandler.cs](Assets/RectPop/Sources/Runtime/PopHandler.cs) の `Apply` メソッドを参照してください。
 
 ### 全ての RenderMode に対応
 
@@ -137,35 +137,35 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
     Unity Editor 上でフローティング UI のベースとなる `Canvas`, `RectTransform` を用意します。
 
 
-2. `PopController` インスタンスを取得します。
+2. `PopHandler` インスタンスを取得します。
 
-    `PopController` は計算ロジック (`IPopProvider`) のハンドラーです。
+    `PopHandler` は計算ロジック (`IPopProvider`) のハンドラーです。
 
     ```csharp
     public class Example01 : MonoBehaviour
     {
-        private readonly PopController _controller = new();
+        private readonly PopHandler _handler = new();
     }
     ```
 
-    `PopController` インスタンスは `IPopProvider` を要求します。デフォルトコンストラクタでは `DefaultPopProvider` が使用されています。ほとんどのケースで、こちらを使用すれば要件を満たせると思います。
+    `PopHandler` インスタンスは `IPopProvider` を要求します。デフォルトコンストラクタでは `PopProvider` が使用されています。ほとんどのケースで、こちらを使用すれば要件を満たせると思います。
 
     ```csharp
-    public class PopController
+    public class PopHandler
     {
         // static
-        private static readonly IPopProvider Default = new DefaultPopProvider();
+        private static readonly IPopProvider Default = new PopProvider();
       
         // dependency
         private readonly IPopProvider _provider;
       
         // constructor
-        public PopController(IPopProvider provider)
+        public PopHandler(IPopProvider provider)
         {
             _provider = provider;
         }
       
-        public PopController() : this(Default)
+        public PopHandler() : this(Default)
         {
         }
     
@@ -174,9 +174,9 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
     ```
 
 > [!NOTE]
-> 同時に複数の `IPopProvider` を取り扱う必要がない場合は、`PopController` インスタンスはシングルトンとして扱うのも良いと思います。
+> 同時に複数の `IPopProvider` を取り扱う必要がない場合は、`PopHandler` インスタンスはシングルトンとして扱うのも良いと思います。
 
-3. `PopController.RequestAndApply` を実行します。
+3. `PopHandler.RequestAndApply` を実行します。
 
     今回の例では、ボタンのクリックイベントをトリガーにしてフローティング UI を表示します。
 
@@ -191,7 +191,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
         [SerializeField] private RectTransform _popRect;
         [SerializeField] private Canvas _popCanvas;
     
-        private readonly PopController _controller = new();
+        private readonly PopHandler _handler = new();
     
         private void Awake()
         {
@@ -204,7 +204,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
                 var request = new PopRequest(baseRectTransform, _baseCanvas);
     
                 // send request and apply result to floating ui
-                _controller.RequestAndApply(request, _popRect, _popCanvas);
+                _handler.RequestAndApply(request, _popRect, _popCanvas);
     
                 // show floating ui
                 _popRect.gameObject.SetActive(true);
@@ -225,7 +225,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
     ここまでは同じです。
 
 
-2. `PopController.Request` を実行します。
+2. `PopHandler.Request` を実行します。
 
     こちらは[ミニマルな使い方](#ミニマルな使い方)の 3 とほぼ同じ実装となっています。フローティング UI の表示は別クラスに委譲しているため、よりシンプルな実装となっていることが分かります。
 
@@ -236,7 +236,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
         [SerializeField] private Canvas _baseCanvas;
         [SerializeField] private Button _button;
     
-        private readonly PopController _controller = new();
+        private readonly PopHandler _handler = new();
     
         private void Awake()
         {
@@ -249,13 +249,13 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
                 var request = new PopRequest(baseRectTransform, _baseCanvas);
     
                 // send request
-                _controller.Request(request);
+                _handler.Request(request);
             });
         }
     }
     ```
 
-3. `PopController.Apply` を実行します。
+3. `PopHandler.Apply` を実行します。
 
     ここではフローティング UI の表示を行うクラスを作成しています。`PopDispatcher.OnDispatched` イベントを購読し、結果を受け取って表示します。
 
@@ -266,7 +266,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
         [SerializeField] private RectTransform _floatingRect;
         [SerializeField] private Canvas _floatingCanvas;
     
-        private readonly PopController _controller = new();
+        private readonly PopHandler _handler = new();
     
         // register event
         private void Awake()
@@ -283,7 +283,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
         // apply result to floating ui
         private void OnPopDispatched(PopDispatchedEvent ev)
         {
-            _controller.Apply(ev.Result, _floatingRect, _floatingCanvas);
+            _handler.Apply(ev.Result, _floatingRect, _floatingCanvas);
             _floatingRect.gameObject.SetActive(true);
         }
     }
@@ -295,7 +295,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
 > 
 > 実際に置き換える場合には `PopDispatcher` を `R3.Observable.FromEvent` などの別の実装に差し替える必要があります。
 >
-> `PopController` を継承したクラスを作成し、`PopController.Dispatch` を override します。
+> `PopHandler` を継承したクラスを作成し、`PopHandler.Dispatch` を override します。
 >
 > 先ほど作成した replaced `PopDispatcher` なクラスを上記で override した `Dispatch` メソッド内で使用してください。
 

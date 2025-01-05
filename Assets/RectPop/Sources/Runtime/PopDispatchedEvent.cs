@@ -2,12 +2,12 @@
 {
     public class PopDispatchedEvent
     {
-        public IPopSource Source { get; }
+        public IPopHandler Handler { get; }
         public PopResult Result { get; }
 
-        public PopDispatchedEvent(IPopSource source, PopResult result)
+        public PopDispatchedEvent(IPopHandler handler, PopResult result)
         {
-            Source = source;
+            Handler = handler;
             Result = result;
         }
     }

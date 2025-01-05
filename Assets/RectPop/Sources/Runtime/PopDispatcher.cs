@@ -7,11 +7,11 @@ namespace RectPop
     {
         public static event Action<PopDispatchedEvent> OnDispatched;
 
-        public static void Dispatch(IPopSource source, PopResult result)
+        public static void Dispatch(IPopHandler handler, PopResult result)
         {
-            if (source is null)
+            if (handler is null)
             {
-                Debug.LogError($"{nameof(source)} is null.");
+                Debug.LogError($"{nameof(handler)} is null.");
                 return;
             }
 
@@ -21,7 +21,7 @@ namespace RectPop
                 return;
             }
 
-            OnDispatched?.Invoke(new PopDispatchedEvent(source, result));
+            OnDispatched?.Invoke(new PopDispatchedEvent(handler, result));
         }
     }
 }

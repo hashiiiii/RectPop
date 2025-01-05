@@ -3,23 +3,27 @@ using UnityEngine;
 
 namespace RectPop
 {
-    public class PopController : IPopSource
+    public class PopHandler : IPopHandler
     {
-        private static readonly IPopProvider Default = new DefaultPopProvider();
+        private static readonly IPopProvider Default = new PopProvider();
         private readonly IPopProvider _provider;
-        private readonly Lazy<string> _sourceName;
+        private readonly Lazy<string> _id;
 
-        public PopController(IPopProvider provider)
+        public PopHandler(IPopProvider provider)
         {
             _provider = provider;
-            _sourceName = new Lazy<string>(GetSourceName);
+
+            // lazy initialization of the ID, which will be generated using the GetId method.
+            // GetId is a virtual method, so to ensure the correct implementation in derived classes is called,
+            // we use lazy evaluation to delay the ID generation until it is actually needed.
+            _id = new Lazy<string>(GetId);
         }
 
-        public PopController() : this(provider: Default)
+        public PopHandler() : this(provider: Default)
         {
         }
 
-        public string SourceName => _sourceName.Value;
+        public string Id => _id.Value;
 
         public virtual PopResult Request(PopRequest request)
         {
@@ -49,9 +53,15 @@ namespace RectPop
                 return;
             }
 
-            if (baseRectTransform is null || baseCanvas is null)
+            if (baseRectTransform is null)
             {
-                Debug.LogError($"{nameof(baseRectTransform)} or {nameof(baseCanvas)} is null.");
+                Debug.LogError($"{nameof(baseRectTransform)} is null.");
+                return;
+            }
+
+            if (baseCanvas is null)
+            {
+                Debug.LogError($"{nameof(baseCanvas)} is null.");
                 return;
             }
 
@@ -75,14 +85,13 @@ namespace RectPop
                 out var localPoint
             );
 
-            if (isConverted)
-            {
-                baseRectTransform.anchoredPosition = localPoint;
-            }
-            else
+            if (!isConverted)
             {
                 Debug.LogError("Failed to convert screen to local point.");
+                return;
             }
+
+            baseRectTransform.anchoredPosition = localPoint;
         }
 
         public virtual void RequestAndApply(PopRequest request, RectTransform floatingUIRectTransform, Canvas floatingUICanvas)
@@ -115,19 +124,14 @@ namespace RectPop
             Apply(result, floatingUIRectTransform, floatingUICanvas);
         }
 
-        protected virtual string GetSourceName()
+        protected virtual string GetId()
         {
             return $"{GetType().Name}_{Guid.NewGuid().ToString()}";
         }
 
         protected virtual void Dispatch(PopResult result)
         {
-            PopDispatcher.Dispatch(source: this, result: result);
-        }
-
-        // default
-        private class DefaultPopProvider : PopProviderBase
-        {
+            PopDispatcher.Dispatch(handler: this, result: result);
         }
     }
 }

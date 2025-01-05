@@ -11,7 +11,7 @@ namespace RectPop
         [SerializeField] private Canvas _floatingCanvas;
         [SerializeField] private Button _transparentButton;
 
-        private readonly PopController _controller = new();
+        private readonly PopHandler _handler = new();
         private readonly List<string> _textList = new()
         {
             "RectPop enables effortless creation of floating UIs like tooltips and menus, ensuring dynamic positioning, screen visibility, and compatibility across devices and resolutions.",
@@ -46,9 +46,9 @@ namespace RectPop
                 return;
             }
 
-            if (ev?.Source is not PopController)
+            if (ev?.Handler is not PopHandler)
             {
-                Debug.LogError($"{nameof(ev.Source)} is not {nameof(PopController)}.");
+                Debug.LogError($"{nameof(ev.Handler)} is not {nameof(PopHandler)}.");
                 return;
             }
 
@@ -64,7 +64,7 @@ namespace RectPop
                 return;
             }
 
-            _controller.Apply(ev.Result, _floatingRect, _floatingCanvas);
+            _handler.Apply(ev.Result, _floatingRect, _floatingCanvas);
 
             var text = _textList[index];
             _floatingText.text = $"Button {index + 1} clicked. {text}";
