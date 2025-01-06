@@ -8,7 +8,7 @@
 
 **Documentation ( [English](README.md), [日本語](README_JA.md) )**
 
-RectPop provides features for developing floating UIs, such as popovers, tooltips, and context menus, easily and efficiently.
+RectPop provides features for developing floating UIs, such as popovers, tooltips, and context menus, **easily and efficiently**.
 
 By lowering the barriers to unifying floating UIs, RectPop helps prevent the redundant implementation of similarly styled prefabs across different parts of your project.
 
@@ -44,7 +44,7 @@ By lowering the barriers to unifying floating UIs, RectPop helps prevent the red
 
 ## Overview
 
-When you submit a request to RectPop’s core system with any object that has a RectTransform and the Canvas on which that object is placed, the system returns the settings needed for displaying a floating UI as the result. By using RectPop’s UI modules, you can easily apply this result to your UI.
+When you submit a request to RectPop’s core system with any object that has a `RectTransform` and the `Canvas` on which that object is placed, the system returns the settings needed for displaying a floating UI as the result. By using RectPop’s UI modules, you can easily apply this result to your UI.
 
 Additionally, as shown in the GIF at the beginning, RectPop provides features for reusing a single floating UI in multiple places. RectPop’s UI modules also allow the request context and the result context to remain loosely coupled.
 
