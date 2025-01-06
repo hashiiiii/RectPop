@@ -8,10 +8,12 @@
 
 **ドキュメント ( [English](README.md), [日本語](README_JA.md) )**
 
-ポップオーバー、ツールチップ、コンテキストメニューなどのフローティング UI を簡単に実装するためのモジュールを提供します。
+RectPop はポップオーバー、ツールチップ、コンテキストメニューなどのフローティング UI を "**簡単に、効率良く**" 開発するための機能を提供します。
+
+RectPop はフローティング UI 共通化のハードルを下げるため、同じような見た目のプレハブがプロジェクトの様々な個所で実装されてしまうといったことを予防します。
 
 <p align="center">
-  <img width="50%" src="Documentation/Images/multi_resolution.gif" alt="ConceptMovie">
+  <img width="80%" src="Documentation/Images/top.gif" alt="ConceptMovie">
 </p>
 
 ## 目次
@@ -42,7 +44,9 @@
 
 ## 概要
 
-`RectTransform` を持つ任意のオブジェクトと、そのオブジェクトが配置されている `Canvas` をリクエストとして渡すと、フローティング UI の表示に必要な設定を返します。
+RectPop のコアシステムに対して、`RectTransform` を持つ任意のオブジェクトと、そのオブジェクトが配置されている `Canvas` を request すると、フローティング UI の表示に必要な設定を result として返します。RectPop の UI モジュール群を使用することで、result を UI に対して簡単に適用できます。
+
+さらに、冒頭の GIF からも分かるように単一の**フローティング UI を複数個所で使いまわすための機能**も提供しています。RectPop の UI モジュール群は **request のコンテキストと result のコンテキストを疎結合に保つ**ことができます。
 
 ## 特徴
 

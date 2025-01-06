@@ -1,0 +1,1651 @@
+fileFormatVersion: 2
+guid: f37d9b001f4b9334486b7690700974d2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4031972571344747501
+    second: orange_square_0
+  - first:
+      213: 8235345038538070650
+    second: orange_square_1
+  - first:
+      213: -7019153021930918563
+    second: orange_square_2
+  - first:
+      213: 3693929329904803072
+    second: orange_square_3
+  - first:
+      213: 3274657142159966029
+    second: orange_square_4
+  - first:
+      213: 5390922946011632580
+    second: orange_square_5
+  - first:
+      213: 6354347980058556120
+    second: orange_square_6
+  - first:
+      213: -8820778554152007715
+    second: orange_square_7
+  - first:
+      213: -605716488583466845
+    second: orange_square_8
+  - first:
+      213: -8179218334461481393
+    second: orange_square_9
+  - first:
+      213: -906264052821130004
+    second: orange_square_10
+  - first:
+      213: -6907214263264380901
+    second: orange_square_11
+  - first:
+      213: 1512654864553057673
+    second: orange_square_12
+  - first:
+      213: -2894311722757087536
+    second: orange_square_13
+  - first:
+      213: -7844950699198844967
+    second: orange_square_14
+  - first:
+      213: -9081256652594741638
+    second: orange_square_15
+  - first:
+      213: -3788633647857453569
+    second: orange_square_16
+  - first:
+      213: -2653888431522338887
+    second: orange_square_17
+  - first:
+      213: -8607494700533860324
+    second: orange_square_18
+  - first:
+      213: -6452049785465125630
+    second: orange_square_19
+  - first:
+      213: -229491868019071686
+    second: orange_square_20
+  - first:
+      213: 6061595662965253810
+    second: orange_square_21
+  - first:
+      213: -2697906426609227867
+    second: orange_square_22
+  - first:
+      213: 1286977009537913827
+    second: orange_square_23
+  - first:
+      213: -8831372946174154568
+    second: orange_square_24
+  - first:
+      213: 984576545786279637
+    second: orange_square_25
+  - first:
+      213: 7080970646789881052
+    second: orange_square_26
+  - first:
+      213: 6741729277482689048
+    second: orange_square_27
+  - first:
+      213: 2532330868081355458
+    second: orange_square_28
+  - first:
+      213: 24632148421491424
+    second: orange_square_29
+  - first:
+      213: 3687269744316310622
+    second: orange_square_30
+  - first:
+      213: 1317198244473898365
+    second: orange_square_31
+  - first:
+      213: 3741510816578667197
+    second: orange_square_32
+  - first:
+      213: 5503217194244887105
+    second: orange_square_33
+  - first:
+      213: 4090726953457704860
+    second: orange_square_34
+  - first:
+      213: -7995009206403040116
+    second: orange_square_35
+  - first:
+      213: -3390862767695678568
+    second: orange_square_36
+  - first:
+      213: -1050430168252584316
+    second: orange_square_37
+  - first:
+      213: -3600487411934164196
+    second: orange_square_38
+  - first:
+      213: 7776843296189054749
+    second: orange_square_39
+  - first:
+      213: 6929970476437367789
+    second: orange_square_40
+  - first:
+      213: 7728128327364957841
+    second: orange_square_41
+  - first:
+      213: -8225093986947633500
+    second: orange_square_42
+  - first:
+      213: -4530818162983818952
+    second: orange_square_43
+  - first:
+      213: 6861708254753978866
+    second: orange_square_44
+  - first:
+      213: -3275734167686482276
+    second: orange_square_45
+  - first:
+      213: 6754492679863864734
+    second: orange_square_46
+  - first:
+      213: -5144316356442857867
+    second: orange_square_47
+  - first:
+      213: 536298470512249977
+    second: orange_square_48
+  - first:
+      213: -3791295156692585301
+    second: orange_square_49
+  - first:
+      213: -8464777046371401883
+    second: orange_square_50
+  - first:
+      213: -5895123596606317165
+    second: orange_square_51
+  - first:
+      213: -3546950072096299754
+    second: orange_square_52
+  - first:
+      213: -4642913124661625118
+    second: orange_square_53
+  - first:
+      213: -8985545824911247047
+    second: orange_square_54
+  - first:
+      213: -1783685002338961633
+    second: orange_square_55
+  - first:
+      213: -1960893371909211253
+    second: orange_square_56
+  - first:
+      213: 8820453069908226650
+    second: orange_square_57
+  - first:
+      213: -4449756506193267282
+    second: orange_square_58
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 90, y: 115, z: 90, w: 75}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: orange_square_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 512
+        height: 280
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 314c0e40f4e8b08c0800000000000000
+      internalID: -4031972571344747501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_1
+      rect:
+        serializedVersion: 2
+        x: 56
+        y: 273
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7a56d80ea2d94270800000000000000
+      internalID: 8235345038538070650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_2
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 274
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d5da2bff385f69e90800000000000000
+      internalID: -7019153021930918563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_3
+      rect:
+        serializedVersion: 2
+        x: 103
+        y: 273
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00d5f5e7729734330800000000000000
+      internalID: 3693929329904803072
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_4
+      rect:
+        serializedVersion: 2
+        x: 159
+        y: 275
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4ff3a7225be17d20800000000000000
+      internalID: 3274657142159966029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_5
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 274
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c396886bd760da40800000000000000
+      internalID: 5390922946011632580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_6
+      rect:
+        serializedVersion: 2
+        x: 187
+        y: 271
+        width: 8
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8d67c9232dd2f2850800000000000000
+      internalID: 6354347980058556120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_7
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 269
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dd7c265b3ac469580800000000000000
+      internalID: -8820778554152007715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_8
+      rect:
+        serializedVersion: 2
+        x: 213
+        y: 274
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3a0b26710101897f0800000000000000
+      internalID: -605716488583466845
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_9
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 274
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f4eaf0a92449d7e80800000000000000
+      internalID: -8179218334461481393
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_10
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 274
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce404e245ad4c63f0800000000000000
+      internalID: -906264052821130004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_11
+      rect:
+        serializedVersion: 2
+        x: 310
+        y: 273
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b187d9a3935a420a0800000000000000
+      internalID: -6907214263264380901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_12
+      rect:
+        serializedVersion: 2
+        x: 359
+        y: 273
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 98d937db5970ef410800000000000000
+      internalID: 1512654864553057673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_13
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 275
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0de90d7a2d655d7d0800000000000000
+      internalID: -2894311722757087536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_14
+      rect:
+        serializedVersion: 2
+        x: 419
+        y: 272
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dfecc547e2212390800000000000000
+      internalID: -7844950699198844967
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_15
+      rect:
+        serializedVersion: 2
+        x: 441
+        y: 267
+        width: 10
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7effe36035e8f180800000000000000
+      internalID: -9081256652594741638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_16
+      rect:
+        serializedVersion: 2
+        x: 458
+        y: 271
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff53d5335c11c6bc0800000000000000
+      internalID: -3788633647857453569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_17
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 274
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b7a79d488e7b2bd0800000000000000
+      internalID: -2653888431522338887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_18
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 273
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c183f90ac290c8880800000000000000
+      internalID: -8607494700533860324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_19
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 271
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 205473097e6b576a0800000000000000
+      internalID: -6452049785465125630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_20
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 259
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a35e1e7ac5ea0dcf0800000000000000
+      internalID: -229491868019071686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 247
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2b6a717c32d1f1450800000000000000
+      internalID: 6061595662965253810
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 234
+        width: 9
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5a7a6bc266c1f8ad0800000000000000
+      internalID: -2697906426609227867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_23
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 234
+        width: 11
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e31a9f75c24cd110800000000000000
+      internalID: 1286977009537913827
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 208
+        width: 13
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8b86b489819a07580800000000000000
+      internalID: -8831372946174154568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_25
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 209
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5d6b5c1e62be9ad00800000000000000
+      internalID: 984576545786279637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_26
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 214
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cdcf0e26949a44260800000000000000
+      internalID: 7080970646789881052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_27
+      rect:
+        serializedVersion: 2
+        x: 501
+        y: 203
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 812e4340f0f6f8d50800000000000000
+      internalID: 6741729277482689048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 178
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2caeeb5f185a42320800000000000000
+      internalID: 2532330868081355458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_29
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 160
+        width: 8
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eab7b8fec2875000800000000000000
+      internalID: 24632148421491424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_30
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 157
+        width: 7
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e54e405eb40db2330800000000000000
+      internalID: 3687269744316310622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_31
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 163
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7582a413d0a74210800000000000000
+      internalID: 1317198244473898365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_32
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 113
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db20479a3448ce330800000000000000
+      internalID: 3741510816578667197
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_33
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 118
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 142d9c081ea5f5c40800000000000000
+      internalID: 5503217194244887105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_34
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 84
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9f56f59d7e25c830800000000000000
+      internalID: 4090726953457704860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_35
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 78
+        width: 10
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8c7e547c750c0190800000000000000
+      internalID: -7995009206403040116
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 63
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 893b661474c31f0d0800000000000000
+      internalID: -3390862767695678568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_37
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 71
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 48e63ffc35f1c61f0800000000000000
+      internalID: -1050430168252584316
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_38
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 68
+        width: 5
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1b066966cf780ec0800000000000000
+      internalID: -3600487411934164196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_39
+      rect:
+        serializedVersion: 2
+        x: 507
+        y: 57
+        width: 5
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ff93f36c5eceb60800000000000000
+      internalID: 7776843296189054749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_40
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 37
+        width: 9
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: deb6ef78e633c2060800000000000000
+      internalID: 6929970476437367789
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_41
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 16
+        width: 9
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 196d833b4c3df3b60800000000000000
+      internalID: 7728128327364957841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_42
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 3
+        width: 15
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4aee8c7e8989add80800000000000000
+      internalID: -8225093986947633500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_43
+      rect:
+        serializedVersion: 2
+        x: 18
+        y: 0
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8392675d2ec4f11c0800000000000000
+      internalID: -4530818162983818952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_44
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 0
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f9f9f48d4fa93f50800000000000000
+      internalID: 6861708254753978866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_45
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 0
+        width: 19
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c96ff6c41214a82d0800000000000000
+      internalID: -3275734167686482276
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_46
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 0
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9d03453e47ccbd50800000000000000
+      internalID: 6754492679863864734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_47
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 1
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57eddf19787bb98b0800000000000000
+      internalID: -5144316356442857867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_48
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 97cc7741e90517700800000000000000
+      internalID: 536298470512249977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_49
+      rect:
+        serializedVersion: 2
+        x: 197
+        y: 0
+        width: 14
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ba4fda2642d926bc0800000000000000
+      internalID: -3791295156692585301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_50
+      rect:
+        serializedVersion: 2
+        x: 209
+        y: 0
+        width: 7
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 56ff628ef12178a80800000000000000
+      internalID: -8464777046371401883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_51
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 0
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39dd1459250503ea0800000000000000
+      internalID: -5895123596606317165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_52
+      rect:
+        serializedVersion: 2
+        x: 327
+        y: 0
+        width: 10
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 61567a4b3b3b6cec0800000000000000
+      internalID: -3546950072096299754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_53
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 0
+        width: 15
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ee7b81cc1f019fb0800000000000000
+      internalID: -4642913124661625118
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_54
+      rect:
+        serializedVersion: 2
+        x: 369
+        y: 0
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 939bb210eadec4380800000000000000
+      internalID: -8985545824911247047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_55
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 1
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f17f464d0f31f37e0800000000000000
+      internalID: -1783685002338961633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_56
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 0
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b8bfee41ed189c4e0800000000000000
+      internalID: -1960893371909211253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_57
+      rect:
+        serializedVersion: 2
+        x: 457
+        y: 1
+        width: 10
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a5232e5955b886a70800000000000000
+      internalID: 8820453069908226650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: orange_square_58
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 0
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ea5fd5f880a4f32c0800000000000000
+      internalID: -4449756506193267282
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 1537655665
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      orange_square_0: -4031972571344747501
+      orange_square_1: 8235345038538070650
+      orange_square_10: -906264052821130004
+      orange_square_11: -6907214263264380901
+      orange_square_12: 1512654864553057673
+      orange_square_13: -2894311722757087536
+      orange_square_14: -7844950699198844967
+      orange_square_15: -9081256652594741638
+      orange_square_16: -3788633647857453569
+      orange_square_17: -2653888431522338887
+      orange_square_18: -8607494700533860324
+      orange_square_19: -6452049785465125630
+      orange_square_2: -7019153021930918563
+      orange_square_20: -229491868019071686
+      orange_square_21: 6061595662965253810
+      orange_square_22: -2697906426609227867
+      orange_square_23: 1286977009537913827
+      orange_square_24: -8831372946174154568
+      orange_square_25: 984576545786279637
+      orange_square_26: 7080970646789881052
+      orange_square_27: 6741729277482689048
+      orange_square_28: 2532330868081355458
+      orange_square_29: 24632148421491424
+      orange_square_3: 3693929329904803072
+      orange_square_30: 3687269744316310622
+      orange_square_31: 1317198244473898365
+      orange_square_32: 3741510816578667197
+      orange_square_33: 5503217194244887105
+      orange_square_34: 4090726953457704860
+      orange_square_35: -7995009206403040116
+      orange_square_36: -3390862767695678568
+      orange_square_37: -1050430168252584316
+      orange_square_38: -3600487411934164196
+      orange_square_39: 7776843296189054749
+      orange_square_4: 3274657142159966029
+      orange_square_40: 6929970476437367789
+      orange_square_41: 7728128327364957841
+      orange_square_42: -8225093986947633500
+      orange_square_43: -4530818162983818952
+      orange_square_44: 6861708254753978866
+      orange_square_45: -3275734167686482276
+      orange_square_46: 6754492679863864734
+      orange_square_47: -5144316356442857867
+      orange_square_48: 536298470512249977
+      orange_square_49: -3791295156692585301
+      orange_square_5: 5390922946011632580
+      orange_square_50: -8464777046371401883
+      orange_square_51: -5895123596606317165
+      orange_square_52: -3546950072096299754
+      orange_square_53: -4642913124661625118
+      orange_square_54: -8985545824911247047
+      orange_square_55: -1783685002338961633
+      orange_square_56: -1960893371909211253
+      orange_square_57: 8820453069908226650
+      orange_square_58: -4449756506193267282
+      orange_square_6: 6354347980058556120
+      orange_square_7: -8820778554152007715
+      orange_square_8: -605716488583466845
+      orange_square_9: -8179218334461481393
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

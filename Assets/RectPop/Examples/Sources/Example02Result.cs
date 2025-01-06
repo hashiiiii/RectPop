@@ -14,8 +14,10 @@ namespace RectPop
         private readonly PopHandler _handler = new();
         private readonly List<string> _textList = new()
         {
-            "RectPop enables effortless creation of floating UIs like tooltips and menus, ensuring dynamic positioning, screen visibility, and compatibility across devices and resolutions.",
-            "RectPop simplifies the implementation of floating UIs, such as tooltips, context menus, and popovers. Its dynamic positioning ensures that UI elements remain visible on screen, even on devices with varying resolutions. By handling requests from multiple objects seamlessly, RectPop unifies UI management, offering developers a robust and flexible solution for interactive applications",
+            "RectPop is a Unity library for floating UIs, including popovers, tooltips, and context menus.",
+            "RectPop is a powerful Unity library for creating popovers, tooltips, and context menus with floating UIs. It automatically adjusts UI placement within screen bounds and supports all Canvas render modes.",
+            "RectPop is a Unity tool for popovers, tooltips, and context menus. By requiring only a RectTransform and Canvas, it streamlines floating UI creation and keeps content visible on any screen. Custom offsets and multiple render modes are supported, making it ideal for dynamic, device-agnostic setups.",
+            "RectPop is a Unity solution for floating UIs like popovers, tooltips, and context menus. It only requires a RectTransform and Canvas, automatically calculating pivots, anchors to keep UIs visible. You can unify multiple floating UIs under one system, regardless of how many objects request them. It also supports all canvas render modes and dynamic resolution changes, ensuring consistency across devices."
         }; 
 
         private void Awake()
@@ -34,30 +36,6 @@ namespace RectPop
 
         private void OnPopDispatched(PopDispatchedEvent ev)
         {
-            if (_floatingRect is null)
-            {
-                Debug.LogWarning($"{nameof(_floatingRect)} is not set.");
-                return;
-            }
-
-            if (_floatingCanvas is null)
-            {
-                Debug.LogWarning($"{nameof(_floatingCanvas)} is not set.");
-                return;
-            }
-
-            if (ev?.Handler is not PopHandler)
-            {
-                Debug.LogError($"{nameof(ev.Handler)} is not {nameof(PopHandler)}.");
-                return;
-            }
-
-            if (ev.Result is null)
-            {
-                Debug.LogError($"{nameof(ev.Result)} is null.");
-                return;
-            }
-
             if (ev.Result.Context is not int index)
             {
                 Debug.LogError($"{nameof(ev.Result.Context)} is not int.");
@@ -66,8 +44,7 @@ namespace RectPop
 
             _handler.Apply(ev.Result, _floatingRect, _floatingCanvas);
 
-            var text = _textList[index];
-            _floatingText.text = $"Button {index + 1} clicked. {text}";
+            _floatingText.text = _textList[index];
 
             SetActive(true);
         }
