@@ -127,7 +127,7 @@ You can install RectPop using Unity’s Package Manager.
 1. Open Unity and select `Window` > `Package Manager`.
 2. Click the `+` button in the top-left corner and select `Add package from git URL...`.
 3. Enter the following URL:  
-   `https://github.com/hashiiiii/RectPop.git?path=/Assets/RectPop/Sources#v1.0.3`
+   `https://github.com/hashiiiii/RectPop.git?path=/Assets/RectPop/Sources#v1.0.4`
 4. Click `Add` to install the package.
 
 For more details, please refer to [Installing from a Git URL](https://docs.unity3d.com/2019.4/Manual/upm-ui-giturl.html) in the Unity manual.
