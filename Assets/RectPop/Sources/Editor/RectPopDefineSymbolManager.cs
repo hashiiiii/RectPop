@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEditor;
 using UnityEditor.Build;
+using UnityEngine;
 
 namespace RectPop.Editor
 {
@@ -14,6 +16,7 @@ namespace RectPop.Editor
         private const string AssemblyUniRx = "UniRx";
         private const string AssemblyR3 = "R3";
         private const string Delimiter = ";";
+        private const string RectPopAsmdefPath = "Assets/RectPop/Sources/Runtime/Rectpop.asmdef";
 
         static RectPopDefineSymbolManager()
         {
@@ -28,6 +31,8 @@ namespace RectPop.Editor
             UpdateSymbol(defines, r3Found, SymbolR3);
 
             PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, string.Join(Delimiter, defines));
+
+            UpdateAsmdefReferences(uniRxFound);
 
             return;
 
@@ -53,6 +58,58 @@ namespace RectPop.Editor
                     }
                 }
             }
+
+            static void UpdateAsmdefReferences(bool uniRxFound)
+            {
+                if (!File.Exists(RectPopAsmdefPath))
+                {
+                    Debug.LogError($"Asmdef file not found: {RectPopAsmdefPath}");
+                    return;
+                }
+
+                // read and parse the asmdef file
+                var asmdefJson = File.ReadAllText(RectPopAsmdefPath);
+                var asmdefData = JsonUtility.FromJson<AsmdefData>(asmdefJson);
+
+                // ensure references list is initialized
+                asmdefData.references ??= new List<string>();
+
+                var updated = false;
+
+                if (uniRxFound)
+                {
+                    if (!asmdefData.references.Contains(AssemblyUniRx))
+                    {
+                        asmdefData.references.Add(AssemblyUniRx);
+                        updated = true;
+                        Debug.Log("Added UniRx reference to RectPop.asmdef.");
+                    }
+                }
+                else
+                {
+                    if (asmdefData.references.Remove(AssemblyUniRx))
+                    {
+                        updated = true;
+                        Debug.Log("Removed UniRx reference from RectPop.asmdef.");
+                    }
+                }
+
+                if (!updated) return;
+
+                // save changes if the asmdef was updated
+                var updatedJson = JsonUtility.ToJson(asmdefData, true);
+                File.WriteAllText(RectPopAsmdefPath, updatedJson);
+                AssetDatabase.Refresh();
+            }
+        }
+
+        [Serializable]
+        private class AsmdefData
+        {
+            public string name;
+            public List<string> references;
+            public List<string> includePlatforms;
+            public List<string> excludePlatforms;
         }
     }
 }
