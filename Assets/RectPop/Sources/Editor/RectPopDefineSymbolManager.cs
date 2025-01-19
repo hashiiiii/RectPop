@@ -16,7 +16,10 @@ namespace RectPop.Editor
         private const string AssemblyUniRx = "UniRx";
         private const string AssemblyR3 = "R3";
         private const string Delimiter = ";";
-        private const string RectPopAsmdefPath = "Assets/RectPop/Sources/Runtime/Rectpop.asmdef";
+        private const string AssetFolderName = "Assets";
+        private const string RootFolderName = "RectPop";
+        private const string PostPathForAsmdef = "Sources/Runtime/Rectpop.asmdef";
+        private const string PackageName = "jp.hashiiiii.rectpop";
 
         static RectPopDefineSymbolManager()
         {
@@ -67,14 +70,21 @@ namespace RectPop.Editor
 
             static void UpdateAsmdefReferences(bool uniRxFound)
             {
-                if (!File.Exists(RectPopAsmdefPath))
+                var rectPopAsmdefPath = GetRectPopAsmdefPath();
+                if (string.IsNullOrEmpty(rectPopAsmdefPath))
                 {
-                    Debug.LogError($"Asmdef file not found: {RectPopAsmdefPath}");
+                    Debug.LogError("RectPop asmdef path is null or empty");
+                    return;
+                }
+
+                if (!File.Exists(rectPopAsmdefPath))
+                {
+                    Debug.LogError($"Asmdef file not found: {rectPopAsmdefPath}");
                     return;
                 }
 
                 // read and parse the asmdef file
-                var asmdefJson = File.ReadAllText(RectPopAsmdefPath);
+                var asmdefJson = File.ReadAllText(rectPopAsmdefPath);
                 var asmdefData = JsonUtility.FromJson<AsmdefData>(asmdefJson);
 
                 // ensure references list is initialized
@@ -104,8 +114,22 @@ namespace RectPop.Editor
 
                 // save changes if the asmdef was updated
                 var updatedJson = JsonUtility.ToJson(asmdefData, true);
-                File.WriteAllText(RectPopAsmdefPath, updatedJson);
+                File.WriteAllText(rectPopAsmdefPath, updatedJson);
                 AssetDatabase.Refresh();
+            }
+
+            static string GetRectPopAsmdefPath()
+            {
+                var packages = UnityEditor.PackageManager.PackageInfo.GetAllRegisteredPackages();
+                var packageInfo = packages.FirstOrDefault(p => p.name == PackageName);
+
+                if (packageInfo != null)
+                {
+                    return Path.Combine(packageInfo.resolvedPath, PostPathForAsmdef);
+                }
+
+                var path = $"{AssetFolderName}/{RootFolderName}/{PostPathForAsmdef}";
+                return File.Exists(path) ? path : null;
             }
 
             static bool IsValidBuildTargetGroup(BuildTargetGroup group)
