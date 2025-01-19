@@ -18,7 +18,7 @@ namespace RectPop.Editor
         private const string Delimiter = ";";
         private const string AssetFolderName = "Assets";
         private const string RootFolderName = "RectPop";
-        private const string PostPathForAsmdef = "Sources/Runtime/Rectpop.asmdef";
+        private const string PostPathForAsmdef = "Runtime/Rectpop.asmdef";
         private const string PackageName = "jp.hashiiiii.rectpop";
 
         static RectPopDefineSymbolManager()
