@@ -20,17 +20,23 @@ namespace RectPop.Editor
 
         static RectPopDefineSymbolManager()
         {
-            var targetGroup = EditorUserBuildSettings.selectedBuildTargetGroup;
-            var namedBuildTarget = NamedBuildTarget.FromBuildTargetGroup(targetGroup);
-            var defines = PlayerSettings.GetScriptingDefineSymbols(namedBuildTarget).Split(Delimiter).ToList();
+            var allBuildTargetGroups = Enum.GetValues(typeof(BuildTargetGroup))
+                .Cast<BuildTargetGroup>()
+                .Where(group => group != BuildTargetGroup.Unknown && IsValidBuildTargetGroup(group));
 
             var uniRxFound = IsAssemblyExists(AssemblyUniRx);
             var r3Found = IsAssemblyExists(AssemblyR3);
 
-            UpdateSymbol(defines, uniRxFound, SymbolUniRx);
-            UpdateSymbol(defines, r3Found, SymbolR3);
+            foreach (var targetGroup in allBuildTargetGroups)
+            {
+                var namedBuildTarget = NamedBuildTarget.FromBuildTargetGroup(targetGroup);
+                var defines = PlayerSettings.GetScriptingDefineSymbols(namedBuildTarget).Split(Delimiter).ToList();
 
-            PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, string.Join(Delimiter, defines));
+                UpdateSymbol(defines, uniRxFound, SymbolUniRx);
+                UpdateSymbol(defines, r3Found, SymbolR3);
+
+                PlayerSettings.SetScriptingDefineSymbols(namedBuildTarget, string.Join(Delimiter, defines));
+            }
 
             UpdateAsmdefReferences(uniRxFound);
 
@@ -100,6 +106,16 @@ namespace RectPop.Editor
                 var updatedJson = JsonUtility.ToJson(asmdefData, true);
                 File.WriteAllText(RectPopAsmdefPath, updatedJson);
                 AssetDatabase.Refresh();
+            }
+
+            static bool IsValidBuildTargetGroup(BuildTargetGroup group)
+            {
+                var type = typeof(BuildTargetGroup);
+                var field = type.GetField(group.ToString());
+                if (field == null) return false;
+
+                var isObsolete = Attribute.IsDefined(field, typeof(ObsoleteAttribute));
+                return !isObsolete && group != BuildTargetGroup.Unknown;
             }
         }
 
