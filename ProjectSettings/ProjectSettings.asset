@@ -609,7 +609,20 @@ PlayerSettings:
   webGLWebAssemblyBigInt: 0
   webGLCloseOnQuit: 0
   webWasm2023: 0
-  scriptingDefineSymbols: {}
+  scriptingDefineSymbols:
+    Android: RECTPOP_UNIRX;RECTPOP_R3
+    EmbeddedLinux: RECTPOP_UNIRX;RECTPOP_R3
+    GameCoreXboxOne: RECTPOP_UNIRX;RECTPOP_R3
+    Nintendo Switch: RECTPOP_UNIRX;RECTPOP_R3
+    PS4: RECTPOP_UNIRX;RECTPOP_R3
+    PS5: RECTPOP_UNIRX;RECTPOP_R3
+    QNX: RECTPOP_UNIRX;RECTPOP_R3
+    ReservedCFE: RECTPOP_UNIRX;RECTPOP_R3
+    Standalone: RECTPOP_UNIRX;RECTPOP_R3
+    VisionOS: RECTPOP_UNIRX;RECTPOP_R3
+    WebGL: RECTPOP_UNIRX;RECTPOP_R3
+    XboxOne: RECTPOP_UNIRX;RECTPOP_R3
+    tvOS: RECTPOP_UNIRX;RECTPOP_R3
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend:
