@@ -9,5 +9,6 @@ jobs:
         with:
           FOLDING: true
           TOC_TITLE: Details
+          CREATE_PR: true
 permissions:
   contents: write
