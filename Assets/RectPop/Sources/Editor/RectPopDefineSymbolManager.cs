@@ -16,8 +16,7 @@ namespace RectPop.Editor
         private const string AssemblyUniRx = "UniRx";
         private const string AssemblyR3 = "R3";
         private const string Delimiter = ";";
-        private const string AssetFolderName = "Assets";
-        private const string RootFolderName = "RectPop";
+        private const string PrePathForAsmdef = "Assets/RectPop/Sources";
         private const string PostPathForAsmdef = "Runtime/Rectpop.asmdef";
         private const string PackageName = "jp.hashiiiii.rectpop";
 
@@ -128,7 +127,7 @@ namespace RectPop.Editor
                     return Path.Combine(packageInfo.resolvedPath, PostPathForAsmdef);
                 }
 
-                var path = $"{AssetFolderName}/{RootFolderName}/{PostPathForAsmdef}";
+                var path = $"{PrePathForAsmdef}/{PostPathForAsmdef}";
                 return File.Exists(path) ? path : null;
             }
 
