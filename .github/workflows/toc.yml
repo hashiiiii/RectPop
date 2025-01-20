@@ -13,5 +13,3 @@ jobs:
           TOC_TITLE: Details
           CREATE_PR: true
           GITHUB_TOKEN: ${{ secrets.ACCESS_TOKEN }}
-permissions:
-  contents: write
