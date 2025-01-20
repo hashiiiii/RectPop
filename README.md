@@ -24,23 +24,21 @@ RectPop lowers the barrier to standardize floating UIs, helping to prevent simil
 <details>
 <summary>Details</summary>
 
-- [RectPop](#rectpop)
-  - [Table of Contents](#table-of-contents)
-  - [Overview](#overview)
-  - [Features](#features)
-    - [Easy Standardization of Floating UIs](#easy-standardization-of-floating-uis)
-    - [Placing the UI Within the Render Area](#placing-the-ui-within-the-render-area)
-    - [Supports All RenderModes](#supports-all-rendermodes)
-    - [Floating Options](#floating-options)
-      - [Mode](#mode)
-      - [Offset](#offset)
-    - [Support for Multiple Resolutions](#support-for-multiple-resolutions)
-  - [Setup](#setup)
-    - [Installation](#installation)
-  - [Minimal Usage](#minimal-usage)
-  - [Recommended Usage](#recommended-usage)
-    - [R3, UniRx](#r3-unirx)
-  - [License](#license)
+- [Overview](#overview)
+- [Features](#features)
+  - [Easy Standardization of Floating UIs](#easy-standardization-of-floating-uis)
+  - [Placing the UI Within the Render Area](#placing-the-ui-within-the-render-area)
+  - [Supports All RenderModes](#supports-all-rendermodes)
+  - [Floating Options](#floating-options)
+    - [Mode](#mode)
+    - [Offset](#offset)
+  - [Support for Multiple Resolutions](#support-for-multiple-resolutions)
+- [Setup](#setup)
+  - [Installation](#installation)
+- [Minimal Usage](#minimal-usage)
+- [Recommended Usage](#recommended-usage)
+  - [R3, UniRx](#r3-unirx)
+- [License](#license)
 
 </details>
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
