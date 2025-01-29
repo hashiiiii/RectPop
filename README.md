@@ -378,8 +378,8 @@ If R3 or UniRx exist in your project, assembly resolution occurs dynamically.
 This software is released under the MIT License.  
 You are free to use it within the scope of the license, but you must include the following copyright notice and license text when using this software:
 
-- LICENSE.md
+* [LICENSE.md](LICENSE.md)
 
 Additionally, refer to the following third-party software:
 
-- Third Party Notices.md(https://github.com/hashiiiii/RectPop/blob/main/Thirs%20Party%20Notices.md)
+* [Third Party Notices.md](https://github.com/hashiiiii/RectPop/blob/main/Thirs%20Party%20Notices.md)
