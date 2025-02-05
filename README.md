@@ -308,6 +308,8 @@ You are free to use it within the scope of the license, but you must include the
 
 * [LICENSE.md](LICENSE.md)
 
-Additionally, refer to the following third-party software:
+Additionally, the table of contents in this document was generated using the following software:
 
-* [Third Party Notices.md](https://github.com/hashiiiii/RectPop/blob/main/Thirs%20Party%20Notices.md)
+* toc-generator (https://github.com/technote-space/toc-generator)
+
+For details on the toc-generator license, please see [Third Party Notices.md](Third%20Party%20Notices.md).
