@@ -1,5 +1,7 @@
- toc-generator
-------------------------------------------------------------------------
+The table of contents for README is created by the following software.
+---------
+
+toc-generator (https://github.com/technote-space/toc-generator)
 
 The MIT License (MIT)
 
