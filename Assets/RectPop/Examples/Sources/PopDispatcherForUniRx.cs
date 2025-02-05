@@ -1,11 +1,14 @@
-﻿using System;
+﻿#if RECTPOP_UNIRX
+using System;
+using UniRx;
 using UnityEngine;
 
 namespace RectPop
 {
-    public class PopDispatcher : IPopDispatcher
+    public class PopDispatcherForUniRx : IPopDispatcher
     {
-        public static event Action<PopDispatchedEvent> OnDispatched;
+        private static readonly Subject<PopDispatchedEvent> UniRxSubject = new();
+        public static IObservable<PopDispatchedEvent> OnDispatchedByUniRxAsObservable => UniRxSubject.AsObservable();
 
         public void Dispatch(IPopHandler handler, PopResult result)
         {
@@ -24,7 +27,8 @@ namespace RectPop
 
             var ev = new PopDispatchedEvent(handler, result);
 
-            OnDispatched?.Invoke(ev);
+            UniRxSubject.OnNext(ev);
         }
     }
 }
+#endif

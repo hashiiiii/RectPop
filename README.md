@@ -126,7 +126,7 @@ You can install RectPop via the Unity Package Manager.
 
 1. Open Unity and select `Window` > `Package Manager`.
 2. Click the `+` button in the top-left corner and choose `Add package from git URL...`.
-3. Enter the following URL: `https://github.com/hashiiiii/RectPop.git?path=/Assets/RectPop/Sources#v1.1.1`
+3. Enter the following URL: `https://github.com/hashiiiii/RectPop.git?path=/Assets/RectPop/Sources#v1.2.0`
 4. Click `Add` to install the package.
 
 For more details, see the Unity manual on “Installing from a Git URL”.
@@ -296,82 +296,10 @@ In the Minimal Usage example, the base UI and the floating UI were both referenc
 RectPop provides integrations so that you can more easily perform event-driven programming with the following OSS:
 
 - R3 (https://github.com/Cysharp/R3)
-
-    ```csharp
-    public class Example02ResultForR3 : MonoBehaviour
-    {
-        // floating ui
-        [SerializeField] private RectTransform _floatingRect;
-        [SerializeField] private Canvas _floatingCanvas;
-    
-        private readonly CompositeDisposable _disposables = new();
-        private readonly PopHandler _handler = new();
-        
-        // register event
-        private void Awake()
-        {
-            PopDispatcher.OnDispatchedByR3AsObservable.Subscribe(OnPopDispatched).AddTo(_disposables);
-        }
-        
-        // unregister event
-        private void OnDestroy()
-        {
-            _disposables.Dispose();
-        }
-        
-        // apply result to floating ui
-        private void OnPopDispatched(PopDispatchedEvent ev)
-        {
-            _handler.Apply(ev.Result, _floatingRect, _floatingCanvas);
-            _floatingRect.gameObject.SetActive(true);
-        }
-    }
-    ```
-
-> [!NOTE]
-> There is an example in `Assets/RectPop/Examples/Example02ForR3.unity`. Please refer to it as needed.
-
 - UniRx (https://github.com/neuecc/UniRx)
 
-```csharp
-    public class Example02ResultForUniRx : MonoBehaviour
-    {
-        // floating ui
-        [SerializeField] private RectTransform _floatingRect;
-        [SerializeField] private Canvas _floatingCanvas;
-        
-        private readonly CompositeDisposable _disposables = new();
-        private readonly PopHandler _handler = new();
-        
-        // register event
-        private void Awake()
-        {
-            PopDispatcher.OnDispatchedByUniRxAsObservable.Subscribe(OnPopDispatched).AddTo(_disposables);
-        }
-        
-        // unregister event
-        private void OnDestroy()
-        {
-            _disposables.Dispose();
-        }
-        
-        // apply result to floating ui
-        private void OnPopDispatched(PopDispatchedEvent ev)
-        {
-            _handler.Apply(ev.Result, _floatingRect, _floatingCanvas);
-            _floatingRect.gameObject.SetActive(true);
-        }
-    }
-```
-
 > [!NOTE]
-> There is an example in `Assets/RectPop/Examples/Example02ForUniRx.unity`. Please refer to it as needed.
-
-These integrations do not require any additional configuration.  
-If R3 or UniRx exist in your project, assembly resolution occurs dynamically.
-
-> [!NOTE]
-> For more details, see Assets/RectPop/Sources/Editor/RectPopDefineSymbolManager.cs.
+> There are examples in `Assets/RectPop/Examples/Example02ForR3.unity`, `Assets/RectPop/Examples/Example02ForUniRx.unity`. Please refer to it as needed.
 
 ## License
 

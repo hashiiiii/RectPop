@@ -128,7 +128,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
 
 1. Unity を開き、`ウィンドウ` > `パッケージマネージャー` を選択します。
 2. 左上の `+` ボタンをクリックし、`Git URL からパッケージを追加...` を選択します。
-3. 以下の URL を入力します。： `https://github.com/hashiiiii/RectPop.git?path=/Assets/RectPop/Sources#v1.1.1`
+3. 以下の URL を入力します。： `https://github.com/hashiiiii/RectPop.git?path=/Assets/RectPop/Sources#v1.2.0`
 4. `追加` をクリックしてパッケージをインストールします。
 
 詳細については、Unity マニュアルの [Git URL からのインストール](https://docs.unity3d.com/ja/2019.4/Manual/upm-ui-giturl.html) を参照してください。
@@ -297,85 +297,13 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
 
 ### R3, UniRx
 
-よりスマートにイベント駆動プログラミングを行うため、下記 OSS との統合が用意に行えるような実装が用意されています。
+よりスマートにイベント駆動プログラミングを行うため、下記 OSS の利用をおすすめしています。
 
 - [R3](https://github.com/Cysharp/R3)
-
-    ```csharp
-    public class Example02ResultForR3 : MonoBehaviour
-    {
-        // floating ui
-        [SerializeField] private RectTransform _floatingRect;
-        [SerializeField] private Canvas _floatingCanvas;
-    
-        private readonly CompositeDisposable _disposables = new();
-        private readonly PopHandler _handler = new();
-    
-        // register event
-        private void Awake()
-        {
-            PopDispatcher.OnDispatchedByR3AsObservable.Subscribe(OnPopDispatched).AddTo(_disposables);
-        }
-    
-        // unregister event
-        private void OnDestroy()
-        {
-            _disposables.Dispose();
-        }
-    
-        // apply result to floating ui
-        private void OnPopDispatched(PopDispatchedEvent ev)
-        {
-            _handler.Apply(ev.Result, _floatingRect, _floatingCanvas);
-            _floatingRect.gameObject.SetActive(true);
-        }
-    }
-    ```
-
-> [!NOTE]
-> 例が `Assets/RectPop/Examples/Example02ForR3.unity` に置いてあるので、必要に応じて参照して下さい。
-
 - [UniRx](https://github.com/neuecc/UniRx)
 
-    ```csharp
-    public class Example02ResultForUniRx : MonoBehaviour
-    {
-        // floating ui
-        [SerializeField] private RectTransform _floatingRect;
-        [SerializeField] private Canvas _floatingCanvas;
-    
-        private readonly CompositeDisposable _disposables = new();
-        private readonly PopHandler _handler = new();
-    
-        // register event
-        private void Awake()
-        {
-            PopDispatcher.OnDispatchedByUniRxAsObservable.Subscribe(OnPopDispatched).AddTo(_disposable);
-        }
-    
-        // unregister event
-        private void OnDestroy()
-        {
-            _disposables.Dispose();
-        }
-    
-        // apply result to floating ui
-        private void OnPopDispatched(PopDispatchedEvent ev)
-        {
-            _handler.Apply(ev.Result, _floatingRect, _floatingCanvas);
-            _floatingRect.gameObject.SetActive(true);
-        }
-    }
-    ```
-
 > [!NOTE]
-> 例が `Assets/RectPop/Examples/Example02ForUniRx.unity` に置いてあるので、必要に応じて参照して下さい。
-
-統合ですが、特に追加で行う作業はありません。
-R3 や UniRx がプロジェクト内に存在する場合は動的にアセンブリの解決がされます。
-
-> [!NOTE]
-> こちらの詳細は `Assets/RectPop/Sources/Editor/RectPopDefineSymbolManager.cs` を参照して下さい。
+> 例が `Assets/RectPop/Examples/Example02ForR3.unity`, `Assets/RectPop/Examples/Example02ForUniRx.unity` に置いてあるので、必要に応じて参照して下さい。
 
 ## ライセンス
 

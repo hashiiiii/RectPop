@@ -1,11 +1,13 @@
-﻿using System;
+﻿#if RECTPOP_R3
+using R3;
 using UnityEngine;
 
 namespace RectPop
 {
-    public class PopDispatcher : IPopDispatcher
+    public class PopDispatcherForR3 : IPopDispatcher
     {
-        public static event Action<PopDispatchedEvent> OnDispatched;
+        private static readonly Subject<PopDispatchedEvent> R3Subject = new();
+        public static Observable<PopDispatchedEvent> OnDispatchedByR3AsObservable => R3Subject.AsObservable();
 
         public void Dispatch(IPopHandler handler, PopResult result)
         {
@@ -24,7 +26,8 @@ namespace RectPop
 
             var ev = new PopDispatchedEvent(handler, result);
 
-            OnDispatched?.Invoke(ev);
+            R3Subject.OnNext(ev);
         }
     }
 }
+#endif

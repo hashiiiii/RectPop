@@ -5,13 +5,17 @@ namespace RectPop
 {
     public class PopHandler : IPopHandler
     {
-        private static readonly IPopProvider Default = new PopProvider();
+        private static readonly IPopProvider DefaultProvider = new PopProvider();
+        private static readonly IPopDispatcher DefaultDispatcher = new PopDispatcher();
+
         private readonly IPopProvider _provider;
+        private readonly IPopDispatcher _dispatcher;
         private readonly Lazy<string> _id;
 
-        public PopHandler(IPopProvider provider)
+        public PopHandler(IPopProvider provider, IPopDispatcher dispatcher)
         {
             _provider = provider;
+            _dispatcher = dispatcher;
 
             // lazy initialization of the ID, which will be generated using the GetId method.
             // GetId is a virtual method, so to ensure the correct implementation in derived classes is called,
@@ -19,7 +23,15 @@ namespace RectPop
             _id = new Lazy<string>(GetId);
         }
 
-        public PopHandler() : this(provider: Default)
+        public PopHandler(IPopDispatcher dispatcher) : this(provider: DefaultProvider, dispatcher: dispatcher)
+        {
+        }
+
+        public PopHandler(IPopProvider provider) : this(provider: provider, dispatcher: DefaultDispatcher)
+        {
+        }
+
+        public PopHandler() : this(provider: DefaultProvider, dispatcher: DefaultDispatcher)
         {
         }
 
@@ -131,7 +143,7 @@ namespace RectPop
 
         protected virtual void Dispatch(PopResult result)
         {
-            PopDispatcher.Dispatch(handler: this, result: result);
+            _dispatcher.Dispatch(handler: this, result: result);
         }
     }
 }

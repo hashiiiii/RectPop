@@ -1,9 +1,7 @@
 {
     "name": "RectPop",
     "rootNamespace": "",
-    "references": [
-        "UniRx"
-    ],
+    "references": [],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,
