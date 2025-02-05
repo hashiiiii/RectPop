@@ -312,6 +312,8 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
 
 * [LICENSE.md](LICENSE.md)
 
-また、サードパーティーのソフトウェアに関しては以下を参照してください。
+また、本ドキュメントの目次は以下のソフトウェアを使用して作成されています。
 
-* [Third Party Notices.md](https://github.com/hashiiiii/RectPop/blob/main/Thirs%20Party%20Notices.md)
+* [toc-generator](https://github.com/technote-space/toc-generator)
+
+toc-generatorのライセンスの詳細は [Third Party Notices.md](Thirs%20Party%20Notices.md) を参照してください。
