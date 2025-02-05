@@ -45,9 +45,9 @@ RectPop lowers the barrier to standardize floating UIs, helping to prevent simil
 
 ## Overview
 
-By sending a request to RectPop's core system with (1) any object that has a RectTransform and (2) the Canvas in which that object is placed, RectPop returns the configuration needed to display the floating UI. Using RectPop’s UI modules, you can easily apply this result to your UI.
+When you make a request to RectPop’s core system with any object that has a RectTransform and the Canvas on which that object is placed, it returns the settings necessary for displaying a floating UI. By using RectPop’s UI modules, you can easily apply this result to the UI.
 
-Moreover, as shown in the initial GIF, RectPop provides functionality that allows a single floating UI to be reused across multiple places. RectPop’s UI modules can **keep the request context and the result context loosely coupled**.
+Furthermore, as shown in the initial GIF, the system provides a feature that **allows you to reuse a single floating UI in multiple places**. RectPop’s UI modules **keep the request context and the result context loosely coupled**.
 
 ## Features
 
@@ -306,10 +306,8 @@ RectPop provides integrations so that you can more easily perform event-driven p
 This software is released under the MIT License.  
 You are free to use it within the scope of the license, but you must include the following copyright notice and license text when using this software:
 
-- LICENSE.md
+* [LICENSE.md](LICENSE.md)
 
-Additionally, the table of contents in this document was generated using the following software:
+Additionally, refer to the following third-party software:
 
-- toc-generator (https://github.com/technote-space/toc-generator)
-
-For details on the toc-generator license, please see [Third Party Notices.md](Third%20Party%20Notices.md).
+* [Third Party Notices.md](https://github.com/hashiiiii/RectPop/blob/main/Thirs%20Party%20Notices.md)
