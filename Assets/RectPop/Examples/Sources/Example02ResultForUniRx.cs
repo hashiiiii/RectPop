@@ -14,7 +14,6 @@ namespace RectPop
         [SerializeField] private Button _transparentButton;
 
         private readonly CompositeDisposable _disposable = new();
-        private readonly PopHandler _handler = new(new PopDispatcherForUniRx());
         private readonly List<string> _textList = new()
         {
             "RectPop is a Unity library for floating UIs, including popovers, tooltips, and context menus.",
@@ -45,7 +44,7 @@ namespace RectPop
                 return;
             }
 
-            _handler.Apply(ev.Result, _floatingRect, _floatingCanvas);
+            PopHelper.Apply(ev.Result, _floatingRect, _floatingCanvas);
 
             _floatingText.text = _textList[index];
 

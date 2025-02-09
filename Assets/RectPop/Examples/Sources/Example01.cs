@@ -43,7 +43,8 @@ namespace RectPop
                         centerThreshold: _centerThreshold
                     );
 
-                    _handler.RequestAndApply(request, _floatingUIRect, _floatingUICanvas);
+                    var result = _handler.Request(request);
+                    PopHelper.Apply(result, _floatingUIRect, _floatingUICanvas);
 
                     SetActive(true);
                 });

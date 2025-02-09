@@ -182,7 +182,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
 > [!NOTE]
 > 同時に複数の `IPopProvider` を取り扱う必要がない場合は、`PopHandler` インスタンスはシングルトンとして扱うのも良いと思います。
 
-3. `PopHandler.RequestAndApply` を実行します。
+3. `PopHandler.Request`, `PopHelper.Apply` を実行します。
 
     今回の例では、ボタンのクリックイベントをトリガーにしてフローティング UI を表示します。
 
@@ -210,7 +210,8 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
                 var request = new PopRequest(baseRectTransform, _baseCanvas);
     
                 // send request and apply result to floating ui
-                _handler.RequestAndApply(request, _popRect, _popCanvas);
+                var result = _handler.Request(request);
+                PopHelper.Apply(result, _popRect, _popCanvas);
     
                 // show floating ui
                 _popRect.gameObject.SetActive(true);
@@ -261,7 +262,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
     }
     ```
 
-3. `PopHandler.Apply` を実行します。
+3. `PopHelper.Apply` を実行します。
 
     ここではフローティング UI の表示を行うクラスを作成しています。`PopDispatcher.OnDispatched` イベントを購読し、結果を受け取って表示します。
 
@@ -271,8 +272,6 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
         // floating ui
         [SerializeField] private RectTransform _floatingRect;
         [SerializeField] private Canvas _floatingCanvas;
-    
-        private readonly PopHandler _handler = new();
     
         // register event
         private void Awake()
@@ -289,7 +288,7 @@ RectPop は、Unity のパッケージマネージャーを使用してインス
         // apply result to floating ui
         private void OnPopDispatched(PopDispatchedEvent ev)
         {
-            _handler.Apply(ev.Result, _floatingRect, _floatingCanvas);
+            PopHelper.Apply(ev.Result, _floatingRect, _floatingCanvas);
             _floatingRect.gameObject.SetActive(true);
         }
     }

@@ -2,6 +2,6 @@
 {
     public interface IPopHandler
     {
-        string Id { get; }
+        PopResult Request(PopRequest request);
     }
 }

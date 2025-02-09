@@ -7,22 +7,15 @@ namespace RectPop
     {
         public static event Action<PopDispatchedEvent> OnDispatched;
 
-        public void Dispatch(IPopHandler handler, PopResult result)
+        public void Dispatch(PopResult result)
         {
-            
-            if (handler is null)
-            {
-                Debug.LogError($"{nameof(handler)} is null.");
-                return;
-            }
-
             if (result is null)
             {
                 Debug.LogError($"{nameof(result)} is null.");
                 return;
             }
 
-            var ev = new PopDispatchedEvent(handler, result);
+            var ev = new PopDispatchedEvent(result);
 
             OnDispatched?.Invoke(ev);
         }

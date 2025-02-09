@@ -179,7 +179,7 @@ For more details, see the Unity manual on “Installing from a Git URL”.
 > [!NOTE]
 > If you don’t need to handle multiple `IPopProvider` instances simultaneously, you could also treat the `PopHandler` instance as a singleton.
 
-3. Execute `PopHandler.RequestAndApply`.
+3. Execute `PopHandler.Request`, `PopHelper.Apply`.
 
    In this example, we display the floating UI when the button is clicked.
 
@@ -207,7 +207,8 @@ For more details, see the Unity manual on “Installing from a Git URL”.
                 var request = new PopRequest(baseRectTransform, _baseCanvas);
     
                 // send request and apply result to floating ui
-                _handler.RequestAndApply(request, _popRect, _popCanvas);
+                var result = _handler.Request(request);
+                PopHelper.Apply(result, _popRect, _popCanvas);
     
                 // show floating ui
                 _popRect.gameObject.SetActive(true);
@@ -257,7 +258,7 @@ In the Minimal Usage example, the base UI and the floating UI were both referenc
    }
    ```
 
-3. Execute `PopHandler.Apply`.
+3. Execute `PopHelper.Apply`.
 
    Here, we create a class that actually displays the floating UI. We subscribe to the `PopDispatcher.OnDispatched` event to receive the result and then display it.
 
@@ -267,8 +268,6 @@ In the Minimal Usage example, the base UI and the floating UI were both referenc
        // floating ui
        [SerializeField] private RectTransform _floatingRect;
        [SerializeField] private Canvas _floatingCanvas;
-
-       private readonly PopHandler _handler = new();
 
        // register event
        private void Awake()
@@ -285,7 +284,7 @@ In the Minimal Usage example, the base UI and the floating UI were both referenc
        // apply result to floating ui
        private void OnPopDispatched(PopDispatchedEvent ev)
        {
-           _handler.Apply(ev.Result, _floatingRect, _floatingCanvas);
+           PopHelper.Apply(ev.Result, _floatingRect, _floatingCanvas);
            _floatingRect.gameObject.SetActive(true);
        }
    }
